@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse the Catalog — BookNest</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+    
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="navbar" id="siteNavbar">
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLeft navRight">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-left" id="navLeft">
+            <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+            <li><a href="books.html" aria-current="page"><i class="fas fa-book"></i> Books</a></li>
+            <li><a href="categories.html"><i class="fas fa-layer-group"></i> Categories</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="images/logo.png" alt="BookNest Logo" loading="lazy">
+            <div>
+                <h1>BookNest</h1>
+
+            </div>
+        </div>
+
+        <ul class="nav-right" id="navRight">
+            <li><a href="membership.html"><i class="fas fa-id-card"></i> Membership</a></li>
+            <li><a href="about.html"><i class="fas fa-circle-info"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+
+    </header>
+
+<!-- HERO SECTION -->
+
+<section class="catalog-hero" id="main-content">
+
+    <div class="hero-content">
+       
+
+        <h1>Browse the Catalog</h1>
+
+        <p class="hero-text">
+            Search, filter, and sort every title currently held by BookNest.
+        </p>
+    </div>
+
+</section>
+
+<!-- SEARCH SECTION -->
+
+<section class="catalog-controls">
+
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <label for="bookSearchInput" class="visually-hidden">Search by title or author</label>
+        <input type="text" id="bookSearchInput" placeholder="Search by title or author...">
+    </div>
+
+    <label for="categoryFilter" class="visually-hidden">Filter by category</label>
+    <select id="categoryFilter">
+        <option value="all">All Categories</option>
+    </select>
+
+    <label for="sortBooks" class="visually-hidden">Sort books</label>
+    <select id="sortBooks">
+        <option value="title-asc">Title (A-Z)</option>
+        <option value="title-desc">Title (Z-A)</option>
+        <option value="rating-desc">Rating (High to Low)</option>
+        <option value="year-desc">Year (Newest)</option>
+        <option value="year-asc">Year (Oldest)</option>
+    </select>
+
+    <button type="button" class="btn btn-ghost btn-sm" id="favOnlyToggle" aria-pressed="false"><i class="fa-regular fa-heart"></i> Favorites Only</button>
+
+</section>
+
+<p class="book-count" id="bookCount">20 books found</p>
+
+<!-- BOOKS (rendered dynamically by script.js from the shared book catalog) -->
+
+<div class="books-grid" id="booksGrid" aria-live="polite">
+  <!-- book cards inserted here by JavaScript -->
+</div>
+
+<p class="no-results" id="noResults" hidden>No books match your search. Try a different title, author, or filter.</p>
+
+<div id="bookModal" class="book-modal">
+  <div class="book-modal-content">
+
+    <button id="closeBookModal" class="close-modal" aria-label="Close book details">×</button>
+
+    <div class="modal-left">
+      <img id="modalBookImage" src="" alt="">
+    </div>
+
+    <div class="modal-right">
+      <span class="modal-category" id="modalBookCategory">FEATURED BOOK</span>
+
+      <h2 id="modalBookTitle"></h2>
+
+      <p id="modalBookAuthor"></p>
+
+      <p class="modal-rating">
+        ★★★★★ <span id="modalBookRating"></span>
+      </p>
+
+      <p class="modal-status" id="modalBookStatus"></p>
+
+      <p id="modalBookDescription">
+        A fascinating book available in our library collection.
+      </p>
+
+      <div class="modal-buttons">
+        <button class="favorite-btn" id="modalFavoriteBtn" type="button" data-id="">
+          <i class="fa-regular fa-heart"></i> Add to Favorites
+        </button>
+
+        <button id="closeBookModalBtn" type="button">
+          Close
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- footer -->
+ <footer class="footer">
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-col">
+            <h2 class="footer-logo">BookNest</h2>
+            <span class="footer-subtitle">PUBLIC LIBRARY</span>
+
+            <p class="footer-text">
+                A welcoming space for readers, learners, and book lovers.
+                Discover thousands of books and connect with a community
+                passionate about knowledge and learning.
+            </p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="footer-col">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="#">Book Catalog</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Membership</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Visit -->
+        <div class="footer-col">
+            <h3>Visit</h3>
+            <ul>
+                <li>Kabul City</li>
+                <li>Afghanistan</li>
+                <li>info@booknest.org</li>
+                <li>+93 700 000 000</li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-col">
+            <h3>Stay Updated</h3>
+            <p>Get updates on new arrivals, events, and reading programs.</p>
+
+            <form class="newsletter">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 BookNest Library. All rights reserved.</p>
+        <p>Built as a university capstone project.</p>
+    </div>
+</footer>
+<button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+<div id="toast" class="toast" role="status" aria-live="polite">
+    <span>✓</span>
+    <span id="toastMessage">Added to favorites</span>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
