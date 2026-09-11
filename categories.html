@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories — BookNest</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="navbar" id="siteNavbar">
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLeft navRight">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-left" id="navLeft">
+            <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+            <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
+            <li><a href="categories.html" aria-current="page"><i class="fas fa-layer-group"></i> Categories</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="images/logo.png" alt="BookNest Logo" loading="lazy">
+            <div>
+                <h1>BookNest</h1>
+
+            </div>
+        </div>
+
+        <ul class="nav-right" id="navRight">
+            <li><a href="membership.html"><i class="fas fa-id-card"></i> Membership</a></li>
+            <li><a href="about.html"><i class="fas fa-circle-info"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+
+    </header>
+
+<!-- HERO -->
+<div class="catalog-hero" id="main-content" style="background:none; background-color: var(--parchment-100);">
+  <div class="hero-content">
+    <div class="hero-tag">EVERY AISLE, MAPPED <span></span></div>
+    <h1>Categories</h1>
+    <p class="hero-text">Eight collections make up the BookNest stacks. Pick one to jump straight to its shelf.</p>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories-section">
+  <h2 class="section-title" style="font-size: 44px;">Browse by Category</h2>
+
+  <div class="categories-grid">
+
+    <div class="category-card">
+      <i class="fa-solid fa-book category-icon"></i>
+      <h3>Fiction</h3>
+      <p>Novels and short stories that carry you elsewhere.</p>
+      <span class="category-count">3 TITLES</span>
+    </div>
+
+    <div class="category-card">
+      <i class="fa-solid fa-rocket category-icon"></i>
+      <h3>Science Fiction</h3>
+      <p>Future worlds, distant stars, strange machines.</p>
+      <span class="category-count">3 TITLES</span>
+    </div>
+
+    <div class="category-card">
+      <i class="fa-solid fa-magnifying-glass category-icon"></i>
+      <h3>Mystery &amp; Thriller</h3>
+      <p>Clues, suspects, and one very patient detective.</p>
+      <span class="category-count">3 TITLES</span>
+    </div>
+
+    <div class="category-card">
+      <i class="fa-solid fa-user category-icon"></i>
+      <h3>Biography</h3>
+      <p>Lives worth reading, told in their own words.</p>
+      <span class="category-count">2 TITLES</span>
+    </div>
+
+    <div class="category-card">
+      <i class="fa-solid fa-landmark category-icon"></i>
+      <h3>History</h3>
+      <p>The past, brought back for another look.</p>
+      <span class="category-count">3 TITLES</span>
+    </div>
+
+    <div class="category-card">
+      <i class="fa-solid fa-heart category-icon"></i>
+      <h3>Romance</h3>
+      <p>Slow burns, second chances, happy endings.</p>
+      <span class="category-count">2 TITLES</span>
+    </div>
+
+    <div class="category-card">
+      <i class="fa-solid fa-feather category-icon"></i>
+      <h3>Poetry</h3>
+      <p>Short lines that leave a long echo.</p>
+      <span class="category-count">2 TITLES</span>
+    </div>
+
+    <div class="category-card">
+      <i class="fa-solid fa-lightbulb category-icon"></i>
+      <h3>Self-Help</h3>
+      <p>Practical ideas for a better next chapter.</p>
+      <span class="category-count">2 TITLES</span>
+    </div>
+
+  </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-col">
+            <h2 class="footer-logo">BookNest</h2>
+            <span class="footer-subtitle">PUBLIC LIBRARY</span>
+
+            <p class="footer-text">
+                A welcoming space for readers, learners, and book lovers.
+                Discover thousands of books and connect with a community
+                passionate about knowledge and learning.
+            </p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="footer-col">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="#">Book Catalog</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Membership</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Visit -->
+        <div class="footer-col">
+            <h3>Visit</h3>
+            <ul>
+                <li>Kabul City</li>
+                <li>Afghanistan</li>
+                <li>info@booknest.org</li>
+                <li>+93 700 000 000</li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-col">
+            <h3>Stay Updated</h3>
+            <p>Get updates on new arrivals, events, and reading programs.</p>
+
+            <form class="newsletter">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 BookNest Library. All rights reserved.</p>
+        <p>Built as a university capstone project.</p>
+    </div>
+</footer>
+<button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+<div id="toast" class="toast" role="status" aria-live="polite">
+    <span>✓</span>
+    <span id="toastMessage">Added to favorites</span>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
