@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership — BookNest</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="navbar" id="siteNavbar">
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLeft navRight">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-left" id="navLeft">
+            <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+            <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
+            <li><a href="categories.html"><i class="fas fa-layer-group"></i> Categories</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="images/logo.png" alt="BookNest Logo" loading="lazy">
+            <div>
+                <h1>BookNest</h1>
+
+            </div>
+        </div>
+
+        <ul class="nav-right" id="navRight">
+            <li><a href="membership.html" aria-current="page"><i class="fas fa-id-card"></i> Membership</a></li>
+            <li><a href="about.html"><i class="fas fa-circle-info"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+
+    </header>
+<div class="catalog-hero" id="main-content" style="background:none; background-color: var(--parchment-100);">
+  <div class="hero-content">
+    <div class="hero-tag">JOIN THE STACKS <span></span></div>
+    <h1>Membership</h1>
+    <p class="hero-text">Choose a plan, then fill out the registration card below. Approval is instant.</p>
+  </div>
+</div>
+
+<section class="membership-section">
+  <div class="membership-grid">
+
+    <div class="plan-card">
+      <h3 class="plan-name">Basic</h3>
+      <div class="plan-price">
+        <span class="amount">$0</span>
+        <span class="period">/ forever</span>
+      </div>
+      <p class="plan-tagline">Everything you need to start borrowing.</p>
+      <ul class="plan-features">
+        <li><i class="fa-solid fa-check"></i> 5 books checked out at a time</li>
+        <li><i class="fa-solid fa-check"></i> 3-week loan period</li>
+        <li><i class="fa-solid fa-check"></i> Access to reading rooms</li>
+        <li><i class="fa-solid fa-check"></i> Standard hold requests</li>
+      </ul>
+      <button class="plan-btn">Choose Basic</button>
+    </div>
+
+    <div class="plan-card featured">
+      <span class="plan-badge">MOST POPULAR</span>
+      <h3 class="plan-name">Premium</h3>
+      <div class="plan-price">
+        <span class="amount">$5</span>
+        <span class="period">/ month</span>
+      </div>
+      <p class="plan-tagline">For readers who never want to wait.</p>
+      <ul class="plan-features">
+        <li><i class="fa-solid fa-check"></i> 15 books checked out at a time</li>
+        <li><i class="fa-solid fa-check"></i> 6-week loan period</li>
+        <li><i class="fa-solid fa-check"></i> Priority hold requests</li>
+        <li><i class="fa-solid fa-check"></i> Access to digital archive</li>
+        <li><i class="fa-solid fa-check"></i> Guest passes for reading rooms</li>
+      </ul>
+      <button class="plan-btn primary">Choose Premium</button>
+    </div>
+
+    <div class="plan-card">
+      <h3 class="plan-name">Scholar</h3>
+      <div class="plan-price">
+        <span class="amount">$12</span>
+        <span class="period">/ month</span>
+      </div>
+      <p class="plan-tagline">Built for researchers and educators.</p>
+      <ul class="plan-features">
+        <li><i class="fa-solid fa-check"></i> Unlimited checkouts</li>
+        <li><i class="fa-solid fa-check"></i> 10-week loan period</li>
+        <li><i class="fa-solid fa-check"></i> Private study room bookings</li>
+        <li><i class="fa-solid fa-check"></i> Inter-library loan requests</li>
+        <li><i class="fa-solid fa-check"></i> Full digital archive + rare collections</li>
+      </ul>
+      <button class="plan-btn">Choose Scholar</button>
+    </div>
+
+  </div>
+</section>
+<!-- regestration========================== -->
+ <section class="registration-section">
+  <div class="registration-card">
+    <h2 class="registration-title">Registration Card</h2>
+    <p class="selected-plan-line">
+      Selected plan: <span id="selectedPlanText" class="selected-plan-value">None selected</span>
+    </p>
+
+    <form id="registrationForm" class="registration-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 01XXXXXXXXX">
+        </div>
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob">
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="address">Mailing Address</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+      </div>
+
+      <label class="checkbox-line">
+        <input type="checkbox" id="agreeTerms" name="agreeTerms">
+        I agree to the library's borrowing policy and code of conduct.
+      </label>
+
+      <button type="submit" class="submit-btn">Submit Registration</button>
+    </form>
+  </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-col">
+            <h2 class="footer-logo">BookNest</h2>
+            <span class="footer-subtitle">PUBLIC LIBRARY</span>
+
+            <p class="footer-text">
+                A welcoming space for readers, learners, and book lovers.
+                Discover thousands of books and connect with a community
+                passionate about knowledge and learning.
+            </p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="footer-col">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="#">Book Catalog</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Membership</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Visit -->
+        <div class="footer-col">
+            <h3>Visit</h3>
+            <ul>
+                <li>Kabul City</li>
+                <li>Afghanistan</li>
+                <li>info@booknest.org</li>
+                <li>+93 700 000 000</li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-col">
+            <h3>Stay Updated</h3>
+            <p>Get updates on new arrivals, events, and reading programs.</p>
+
+            <form class="newsletter">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 BookNest Library. All rights reserved.</p>
+        <p>Built as a university capstone project.</p>
+    </div>
+</footer>
+<button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+<div id="toast" class="toast" role="status" aria-live="polite">
+    <span>✓</span>
+    <span id="toastMessage">Added to favorites</span>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
