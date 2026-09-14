@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — BookNest</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="navbar" id="siteNavbar">
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLeft navRight">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-left" id="navLeft">
+            <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
+            <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
+            <li><a href="categories.html"><i class="fas fa-layer-group"></i> Categories</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="images/logo.png" alt="BookNest Logo" loading="lazy">
+            <div>
+                <h1>BookNest</h1>
+
+            </div>
+        </div>
+
+        <ul class="nav-right" id="navRight">
+            <li><a href="membership.html"><i class="fas fa-id-card"></i> Membership</a></li>
+            <li><a href="about.html"><i class="fas fa-circle-info"></i> About</a></li>
+            <li><a href="contact.html" aria-current="page"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
+        </ul>
+
+    </header>
+<div class="catalog-hero" id="main-content" style="background:none; background-color: var(--parchment-100);">
+  <div class="hero-content">
+    <div class="hero-tag">REACH THE FRONT DESK <span></span></div>
+    <h1>Contact Us</h1>
+    <p class="hero-text">Questions, renewals, or even booking- we read every message.</p>
+  </div>
+</div>
+<section class="contact-section">
+  <div class="contact-grid">
+
+    <div class="contact-form-wrap">
+      <form id="contactForm" class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactName">Full Name</label>
+            <input type="text" id="contactName" name="contactName">
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input type="email" id="contactEmail" name="contactEmail">
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="contactSubject">Subject</label>
+          <input type="text" id="contactSubject" name="contactSubject">
+        </div>
+
+        <div class="form-group full-width">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="contactMessage" rows="6"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+
+      <div class="map-placeholder">
+        <div class="map-pin"><i class="fa-solid fa-location-dot"></i></div>
+        <p class="map-address">Shahr-e-Naw, District 4 &middot; Kabul</p>
+        <p class="map-note">INTERACTIVE MAP EMBED PLACEHOLDER</p>
+      </div>
+    </div>
+
+    <div class="faq-sidebar">
+      <h2 class="faq-title">Frequently Asked</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            How do I get a library card?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Visit any BookNest branch with a valid ID and proof of address. Cards are issued on the spot and are free for all Kabul residents.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            What happens if I return a book late?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Basic members get a 3-day grace period. After that, a small daily fee applies, capped at the cost of the book. Children's titles never accrue late fees.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Can I renew a book online?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Log into your account from the Books page and select "Renew" on any active loan, as long as no one else has placed a hold on it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Do you offer inter-library loans?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Scholar members can request titles from partner libraries across Kabul and Herat. Requests typically arrive within 5-7 business days.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Is there Wi-Fi in the reading rooms?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Free Wi-Fi is available throughout the building. Ask any librarian at the front desk for the current guest password.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Can I book a private study room?
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Premium and Scholar members can reserve a study room for up to 3 hours at a time through the front desk or by calling ahead.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-col">
+            <h2 class="footer-logo">BookNest</h2>
+            <span class="footer-subtitle">PUBLIC LIBRARY</span>
+
+            <p class="footer-text">
+                A welcoming space for readers, learners, and book lovers.
+                Discover thousands of books and connect with a community
+                passionate about knowledge and learning.
+            </p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Explore -->
+        <div class="footer-col">
+            <h3>Explore</h3>
+            <ul>
+                <li><a href="#">Book Catalog</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Membership</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Visit -->
+        <div class="footer-col">
+            <h3>Visit</h3>
+            <ul>
+                <li>Kabul City</li>
+                <li>Afghanistan</li>
+                <li>info@booknest.org</li>
+                <li>+93 700 000 000</li>
+            </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-col">
+            <h3>Stay Updated</h3>
+            <p>Get updates on new arrivals, events, and reading programs.</p>
+
+            <form class="newsletter">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 BookNest Library. All rights reserved.</p>
+        <p>Built as a university capstone project.</p>
+    </div>
+</footer>
+<button type="button" id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+<div id="toast" class="toast" role="status" aria-live="polite">
+    <span>✓</span>
+    <span id="toastMessage">Added to favorites</span>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
