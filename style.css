@@ -1085,6 +1085,12 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
     padding:70px 40px 30px;
     position:relative;
 }
+.footerr{
+    background:#192c4d;
+    color:#fff;
+    padding:50px 20px 15px;
+    position:relative;
+}
 
 .footer-container{
     max-width:1200px;
@@ -1094,9 +1100,14 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
     gap:50px;
 }
 
+
 .footer-logo{
-    font-size:2rem;
+    font-size:1.5rem;
     margin-bottom:5px;
+}
+.footer-coll{
+    font-size: 1rem;
+     margin-bottom:2px;
 }
 
 .footer-subtitle{
@@ -1110,10 +1121,14 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
     line-height:1.8;
     color:#d8d8d8;
 }
+.footer-col h2{
+    color: white;
+}
 
 .footer-col h3{
     font-size:1.8rem;
     margin-bottom:25px;
+    color: white;
 }
 
 .footer-col ul{
@@ -1164,6 +1179,11 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
     gap:12px;
     margin-top:20px;
 }
+.newsletterr{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+}
 
 .newsletter input{
     flex:1;
@@ -1172,7 +1192,23 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
     border-radius:40px;
     font-size:1rem;
 }
+.newsletterr input{
+    flex:1;
+    padding:16px 20px;
+    border:none;
+    border-radius:40px;
+    font-size:1rem;
+}
 
+.newsletterr button{
+    padding:14px 20px;
+    border:none;
+    border-radius:30px;
+    background:#c89a43;
+    color:#000;
+    font-weight:600;
+    cursor:pointer;
+}
 .newsletter button{
     padding:16px 30px;
     border:none;
@@ -1182,6 +1218,7 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
     font-weight:600;
     cursor:pointer;
 }
+
 
 .newsletter button:hover{
     opacity:.9;
@@ -1195,7 +1232,15 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
     justify-content:space-between;
     color:#a8a8a8;
 }
+.footer-bottomm{
+    border-top:1px solid rgba(255,255,255,0.15);
+    margin-top:20px;
+    padding-top:10px;
+    display:flex;
+    justify-content:center;
+    color:#a8a8a8;
 
+}
 .back-to-top{
     position:absolute;
     right:40px;
