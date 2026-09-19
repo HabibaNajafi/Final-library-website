@@ -93,16 +93,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         Browse some of our most loved books and discover your next great read.
     </p>
 
+    <!-- Wrap buttons directly inside the shelf-image div -->
     <div class="shelf-image">
-        <img src="./images/shelf2.png" alt="Virtual Bookshelf">
-    </div>
+    <button class="shelf-btn prev-btn" id="prevBtn" aria-label="Previous Shelf">&#10094;</button>
 
-    
+    <!-- Initial image -->
+    <img id="shelfImg" src="./images/shelf2.png" alt="Virtual Bookshelf">
+
+    <button class="shelf-btn next-btn" id="nextBtn" aria-label="Next Shelf">&#10095;</button>
+</div>
 
 </section>
-</section>
-<!-- ==================================================== -->
-
 
 <div id="bookModal" class="book-modal">
   <div class="book-modal-content">
@@ -404,9 +405,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     <div class="news-slider">
 
-        <button class="news-arrow left">
+        <!-- <button class="news-arrow left">
             <i class="fa-solid fa-chevron-left"></i>
-        </button>
+        </button> -->
 
         <!-- Card 1 -->
         <div class="news-card">
@@ -427,7 +428,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             
 
-            <h3>Discover the Latest Bestsellers</h3>
+            <h3> Latest Bestsellers</h3>
 
             <p>
                 Explore newly added fiction, non-fiction,
@@ -435,7 +436,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 for BookNest readers.
             </p>
 
-            <a href="#">EXPLORE BOOKS →</a>
+            
 
         </div>
 
@@ -472,21 +473,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 author spotlights, and community reading activities.
             </p>
 
-            <a href="#">LEARN MORE →</a>
+            
 
         </div>
 
-        <button class="news-arrow right">
+        <!-- <button class="news-arrow right">
             <i class="fa-solid fa-chevron-right"></i>
-        </button>
+        </button> -->
 
     </div>
 
-    <div class="news-btn-wrap">
-        <a href="#" class="view-all-btn">
-            VIEW ALL NEWS & EVENTS
-        </a>
-    </div>
+    
 
 </section>
 

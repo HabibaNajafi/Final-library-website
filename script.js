@@ -1121,7 +1121,7 @@ function validateRequired(fields) {
   return allValid;
 }
 
-/*UTILITIES */
+/*help */
 function debounce(fn, delay) {
   let timer;
   return (...args) => {
@@ -1130,7 +1130,7 @@ function debounce(fn, delay) {
   };
 }
 
-/*INIT — everything runs after DOM is ready */
+/*runing  all function or calling all function */
 document.addEventListener("DOMContentLoaded", () => {
   initDarkMode();
   initMobileNav();
@@ -1148,3 +1148,42 @@ document.addEventListener("DOMContentLoaded", () => {
   initNewsletterForms();
   initMembershipPage();
 });
+
+// 1. Add all your picture paths/links here
+const shelfImages = [
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1HWmSaJQH3KBfj6_b8v8H2SAk0qT79ehFAaXvIW4qFMh_V0JNOps_gLI&s=10',
+    'https://hips.hearstapps.com/hmg-prod/images/90173095-e1b0-405a-bf91-e86fb39db625.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDAz7Jl6WnBQgPqrglHpZnB45a7sWGArnLydnb-lEEyOOVDzi8CAailslg&s=10' // Add as many pictures as you want
+];
+
+// Track current image index
+let currentIndex = 0;
+
+// Get DOM elements
+const shelfImg = document.getElementById('shelfImg');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+// Function to swap images with a smooth fade effect
+function updateShelf(index) {
+    shelfImg.style.opacity = '0.3'; // Start fade out
+    
+    setTimeout(() => {
+        shelfImg.src = shelfImages[index]; // Change image source
+        shelfImg.style.opacity = '1';       // Fade back in
+    }, 150);
+}
+
+// Next Button Click Event
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % shelfImages.length; // Loop back to start after last image
+    updateShelf(currentIndex);
+});
+
+// Previous Button Click Event
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + shelfImages.length) % shelfImages.length; // Loop to end if going back from first
+    updateShelf(currentIndex);
+});
+
+
