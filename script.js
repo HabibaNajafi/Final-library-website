@@ -2,13 +2,13 @@
 const bookCatalog = [
   { 
     id: 1,
-    title: "A Field Guide to Small Signals",
-    author: "Rina Kapoor",
+    title: "To Kill a Mockingbird ",
+    author: "Harper Lee",
     category: "Science & Technology",
     rating: 4.9,
     year: 2023,
     status: "available",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE2_cpigpGcLxYI5AcZYcNlCWxzISGJlRkMX-OLHn0IncLWYxbbb0duQe0&s=10",
+    image: "images/1.jpg",
     featured: true,
     description: "A field naturalist's notebook of the small, easy-to-miss signals nature sends before the big changes arrive." 
   },
@@ -104,7 +104,7 @@ const bookCatalog = [
 
 {
   id: 9,
-  title: "The Long Coastline of Empire",
+  title: "The Long Coastline",
   author: "Adaeze Nwosu",
   category: "History",
   rating: 4.6,
@@ -208,7 +208,7 @@ const bookCatalog = [
 
 {
   id: 17,
-  title: "Letters from the Wrong Century",
+  title: "Letters the Wrong Century",
   author: "Saanvi Rao",
   category: "Fiction",
   rating: 4.7,
