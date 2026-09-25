@@ -12,32 +12,36 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="navbar" id="siteNavbar">
-        <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLeft navRight">
-            <span></span><span></span><span></span>
-        </button>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLeft navRight">
+        <span></span><span></span><span></span>
+    </button>
+      
+    <ul class="nav-left" id="navLeft">
+        <li><a href="index.html" aria-current="page"><i class="fas fa-house"></i> Home</a></li>
+        <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
+        <li><a href="categories.html"><i class="fas fa-layer-group"></i> Categories</a></li>
+    </ul>
 
-        <ul class="nav-left" id="navLeft">
-            <li><a href="index.html" aria-current="page"><i class="fas fa-house"></i> Home</a></li>
-            <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
-            <li><a href="categories.html"><i class="fas fa-layer-group"></i> Categories</a></li>
-        </ul>
-
-        <div class="logo">
-            <img src="images/logo.png" alt="BookNest Logo" loading="lazy">
-            <div>
-                <h1>BookNest</h1>
-
-            </div>
+    <div class="logo">
+        <img src="images/logo.png" alt="BookNest Logo" loading="lazy">
+        <div>
+            <h1>BookNest</h1>
         </div>
+    </div>
 
-        <ul class="nav-right" id="navRight">
-            <li><a href="membership.html"><i class="fas fa-id-card"></i> Membership</a></li>
-            <li><a href="about.html"><i class="fas fa-circle-info"></i> About</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li><button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
-        </ul>
-
-    </header>
+    <ul class="nav-right" id="navRight">
+        <li><a href="membership.html"><i class="fas fa-id-card"></i> Membership</a></li>
+        <li><a href="about.html"><i class="fas fa-circle-info"></i> About</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
+        <!-- Login Button placed with proper list spacing on the right -->
+        <!-- <li>
+            <button type="button" class="nav-login-btn" id="openAuthModal" title="Account Login" aria-label="Account login">
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </li> -->
+    </ul>
+</header>
 <main id="main-content">
 
     
@@ -557,6 +561,56 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     <span>✓</span>
     <span id="toastMessage">Added to favorites</span>
 </div>
+
+
+
+<!-- login model -->
+ <!-- <div class="auth-modal-overlay" id="authModalOverlay">
+    <div class="auth-card">
+        <button class="modal-close-btn" id="closeAuthModal">&times;</button>
+        
+        <div class="auth-header">
+            <div class="auth-brand-logo">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h2>BookNest</h2>
+            <span class="auth-subtitle">PUBLIC LIBRARY</span>
+        </div>
+
+        <form class="auth-form" id="professionalLoginForm">
+            <div class="input-group">
+                <label for="userEmail"><i class="fa-regular fa-envelope"></i> Email Address</label>
+                <input type="email" id="userEmail" placeholder="reader@booknest.org" required>
+            </div>
+
+            <div class="input-group">
+                <label for="userPassword"><i class="fa-solid fa-lock"></i> Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="userPassword" placeholder="••••••••" required>
+                    <i class="fa-regular fa-eye toggle-password" id="togglePassword"></i>
+                </div>
+            </div>
+
+            <div class="auth-options">
+                <label class="remember-me">
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="auth-submit-btn">
+                <span>Sign In</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form> -->
+
+        <!-- <div class="auth-footer">
+            <p>Don't have a library membership? <a href="#">Apply Here</a></p>
+        </div>
+    </div>
+</div> -->
+
+
 <script src="script.js"></script>
 </body>
 </html>

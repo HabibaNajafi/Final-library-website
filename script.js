@@ -1149,7 +1149,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMembershipPage();
 });
 
-// 1. Add all your picture paths/links here
+// 1. Add all the picture in the shelf
 const shelfImages = [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1HWmSaJQH3KBfj6_b8v8H2SAk0qT79ehFAaXvIW4qFMh_V0JNOps_gLI&s=10',
     'https://hips.hearstapps.com/hmg-prod/images/90173095-e1b0-405a-bf91-e86fb39db625.jpg',
@@ -1185,5 +1185,44 @@ prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + shelfImages.length) % shelfImages.length; // Loop to end if going back from first
     updateShelf(currentIndex);
 });
+
+
+// login button=======================
+// document.addEventListener('DOMContentLoaded', () => {
+//     const openBtn = document.getElementById('openAuthModal');
+//     const closeBtn = document.getElementById('closeAuthModal');
+//     const overlay = document.getElementById('authModalOverlay');
+//     const togglePassword = document.getElementById('togglePassword');
+//     const passwordInput = document.getElementById('userPassword');
+
+//     if (openBtn && overlay && closeBtn) {
+//         // Open Modal
+//         openBtn.addEventListener('click', () => {
+//             overlay.classList.add('active');
+//         });
+
+//         // Close Modal
+//         closeBtn.addEventListener('click', () => {
+//             overlay.classList.remove('active');
+//         });
+
+//         // Close when clicking outside card
+//         overlay.addEventListener('click', (e) => {
+//             if (e.target === overlay) {
+//                 overlay.classList.remove('active');
+//             }
+//         });
+//     }
+
+//     if (togglePassword && passwordInput) {
+//         // Toggle Password Eye Icon
+//         togglePassword.addEventListener('click', () => {
+//             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+//             passwordInput.setAttribute('type', type);
+//             togglePassword.classList.toggle('fa-eye');
+//             togglePassword.classList.toggle('fa-eye-slash');
+//         });
+//     }
+// });
 
 

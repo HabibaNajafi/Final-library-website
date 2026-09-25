@@ -92,6 +92,30 @@ html {
   color: var(--brass-500);
 }
 
+/* Circular Login Button aligned in nav-right list */
+.nav-right li .nav-login-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-left: 5px; /* Adjust spacing between dark mode & login button */
+}
+
+.nav-right li .nav-login-btn:hover {
+    background: #c89a43;
+    color: #192c4d;
+    border-color: #c89a43;
+    transform: translateY(-2px);
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -116,6 +140,222 @@ html {
   color: var(--brass-500);
   letter-spacing: 4px;
   font-size: 0.8rem;
+}
+
+/* Circular Login Button (Matches Dark Mode Toggle Design) */
+.nav-login-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.nav-login-btn:hover {
+    background: #c89a43;
+    color: #192c4d;
+    border-color: #c89a43;
+    transform: translateY(-2px);
+}
+
+/* Glassmorphic Professional Login Modal Overlay */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.auth-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.auth-card {
+    background: rgba(25, 44, 77, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+    padding: 32px 28px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.auth-modal-overlay.active .auth-card {
+    transform: translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #a8a8a8;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+    color: #c89a43;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.auth-brand-logo {
+    width: 40px;
+    height: 40px;
+    background: rgba(200, 154, 67, 0.15);
+    border: 1px solid #c89a43;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    color: #c89a43;
+    font-size: 1.2rem;
+}
+
+.auth-header h2 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.auth-subtitle {
+    color: #c89a43;
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #d8d8d8;
+    margin-bottom: 8px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.88rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #c89a43;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a8a8a8;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: #a8a8a8;
+    margin-bottom: 22px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: #c89a43;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #c89a43;
+    color: #192c4d;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.auth-submit-btn:hover {
+    background: #d4af37;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: #a8a8a8;
+}
+
+.auth-footer a {
+    color: #c89a43;
+    text-decoration: none;
+    font-weight: 500;
 }
 /* main================================================= */
 .hero {
