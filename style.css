@@ -1670,6 +1670,69 @@ background-repeat: no-repeat;
     font-size:16px;
 }
 
+
+.catalog-hero {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  padding: 3rem 2rem;
+  
+  /* Background Image Setup */
+  background-image: url('./images/backgrondcatagories.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Dark/Semi-transparent Overlay to ensure text readability */
+.catalog-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(0, 0, 0, 0.65) 0%, 
+    rgba(0, 0, 0, 0.4) 50%, 
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* Ensure text content sits above the background overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  color: #ffffff; /* White text for contrast against the dark overlay */
+}
+
+.hero-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #f3c68f; /* Accent color for the tag */
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+  font-family: Georgia, serif;
+  font-size: 2.8rem;
+  margin: 0.2rem 0 0.8rem 0;
+  color: #ffffff;
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
 /* BOOKS */
 
 .books-grid{
@@ -2916,6 +2979,111 @@ body.dark-mode .hero-content p {
     font-size:.9rem;
     white-space:nowrap;
 }
+
+
+
+
+
+/* Generic Hero Container for ALL Pages */
+.page-hero {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  padding: 3.5rem 2.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Semi-Transparent Gradient Overlay for Readability */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(17, 30, 46, 0.85) 0%, 
+    rgba(17, 30, 46, 0.6) 50%, 
+    rgba(17, 30, 46, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* Hero Text Content Container */
+.page-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+/* Typography Styling Overrides */
+.page-hero .hero-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #c68a4c; /* Gold Accent */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.page-hero h1 {
+  font-family: Georgia, serif;
+  font-size: 2.8rem;
+  margin: 0.2rem 0 0.8rem 0;
+  color: #ffffff !important; /* Forces white text on all pages */
+}
+
+.page-hero .hero-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e2e8f0 !important; /* Forces light gray body text */
+  margin: 0;
+}
+
+/* Specific Page Background Images */
+.hero-categories {
+  background-image: url('./images/backgrondcatagories.jpeg');
+}
+
+.hero-membership {
+  background-image: url('./images/backgrondcatagories.jpeg'); /* Or membership-bg.jpg */
+}
+
+.hero-about {
+  background-image: url('./images/backgrondcatagories.jpeg'); /* Or about-bg.jpg */
+}
+
+.hero-contact {
+  background-image: url('./images/backgrondcatagories.jpeg'); /* Or contact-bg.jpg */
+}
+
+
+/* ================================== */
+/* Hero Container Overlay */
+.catalog-hero::before,
+.hero-categories::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(17, 30, 46, 0.85) 0%, 
+    rgba(17, 30, 46, 0.6) 50%, 
+    rgba(17, 30, 46, 0.2) 100%
+  );
+  z-index: 1;
+}
+
 
 
 
