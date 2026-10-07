@@ -3,88 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login annd Register</title>
+    <title>Login and Register</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Sora:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="auto-container">
         <section class="auto-box">
-            <div class="forms-container">
-                <!-- login form -->
-                 <div class="form login-form">
-                    <div class = "form-content">
-                        <span class="form-icon"></span>
-                        <h1>welcom to BookNest</h1>
-                        <p class="form-subtitle">login browes your faviourt books</p>
 
-                        <!-- form -->
-                         <form id="loginform">
+            <!-- LEFT SIDE: brand panel (text changes with the form) -->
+            <div class="slider-container">
+                <div class="slider-panel">
+                    <div class="slider-content login-panel">
+                        <div class="brand"><span>📖</span> BookNest</div>
+                        <p class="brand-tagline">More Books. A Brighter You.</p>
+                        <h2>Welcome Back,<br>Book Lover</h2>
+                        <p class="panel-text">Log in and continue your reading journey.</p>
+                        <!-- hidden by CSS, kept because script.js uses this id -->
+                        <button type="button" class="outline-btn" id="registerBtn">Register</button>
+                    </div>
+                    <div class="slider-content register-panel">
+                        <div class="brand"><span>📖</span> BookNest</div>
+                        <p class="brand-tagline">More Books. A Brighter You.</p>
+                        <h2>Create Your<br>Account</h2>
+                        <p class="panel-text">Start your reading journey today.</p>
+                        <!-- hidden by CSS, kept because script.js uses this id -->
+                        <button type="button" class="outline-btn" id="loginBtn">Login</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: the two forms -->
+            <div class="forms-container">
+
+                <!-- LOGIN FORM -->
+                <div class="form login-form">
+                    <div class="form-content">
+                        <div class="form-header">
+                            <span class="form-icon">👤</span>
+                            <h1>Login</h1>
+                        </div>
+                        <p class="form-subtitle">Welcome back! Please enter your details.</p>
+
+                        <form id="loginform">
                             <div class="input-group">
-                                <label>Email Address</label>
-                                <input type="email" id="loginEmail"placeholder = "Enter your email" required>
+                                <label for="loginEmail">Email Address</label>
+                                <input type="email" id="loginEmail" placeholder="Enter your email" required>
                             </div>
                             <div class="input-group">
-                                <label>Password</label>
+                                <label for="loginPassword">Password</label>
                                 <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            </div>
+                            <div class="form-options">
+                                <label class="remember"><input type="checkbox"> Remember me</label>
+                                <a href="#" class="forgot-link">Forgot password?</a>
                             </div>
                             <button type="submit" class="main-btn">Login</button>
                             <p id="loginMeddage" class="message"></p>
-                         </form>
-                        <p class="mobile-switch">Do not have and account? <button id="showRegister">Register</button></p>
+                        </form>
+
+                        <div class="switch-box">
+                            <p>Do not have an account?</p>
+                            <button type="button" class="switch-btn" id="showRegister">Register</button>
+                        </div>
                     </div>
-                 </div>
-                 <!-- regester -->
-                  <div class="form register-fprm">
+                </div>
+
+                <!-- REGISTER FORM -->
+                <div class="form register-form">
                     <div class="form-content">
-                        <span class="form-icon" ></span>
-                        <h1>Creat Account</h1>
-                        <p class="form-subtitle">Start your readint hear</p>
+                        <div class="form-header">
+                            <span class="form-icon">➕</span>
+                            <h1>Register</h1>
+                        </div>
+                        <p class="form-subtitle">Fill in your details to create your account.</p>
+
                         <form id="registerForm">
                             <div class="input-group">
-                                <label>Full Name</label>
-                                <input type="text" id="registerName" placeholder="Enter your full Name" required>
+                                <label for="registerName">Full Name</label>
+                                <input type="text" id="registerName" placeholder="Enter your full name" required>
                             </div>
                             <div class="input-group">
-                                <label>Email Address</label>
-                                <input type="email" id="registerEmail" placeholder="Enteryour Email" required>
+                                <label for="registerEmail">Email Address</label>
+                                <input type="email" id="registerEmail" placeholder="Enter your email" required>
                             </div>
                             <div class="input-group">
-                                <label>Confirm Password</label>
-                                <input type="password" id="confirmPassword" placeholder="confirm your password" required>
+                                <label for="confirmPassword"> Password</label>
+                                <input type="password" id="confirmPassword" placeholder="Enter your password" required>
                             </div>
                             <button type="submit" class="main-btn">Create Account</button>
                             <p id="registerMessage" class="message"></p>
                         </form>
 
-                        <p>Already Have an account? 
-                            <button id="showLogin">Login</button>
-                        </p>
-                    </div>
-                  </div>
-            </div>
-            <div class="slider-container">
-                <div class="slider-panel">
-                    <div class="slider-content login-panel">
-                        <span class="panel-icon"></span>
-                        <h2>Hello,Book Intersts</h2>
-                        <p>Do not have an acount yet? Create ont start reading.</p>
-                        <button class="outlint-btn" id="registerBtn">Register</button>
-                    </div>
-                    <div class="slider-content register-panel">
-                         <span class="palen-icon"></span>
-                         <h2>Welcome Back</h2>
-                         <p>Already have an account? Login and continue your reading.</p>
-                         <button class="outlint-btn" id="loginBtn">login</button>
+                        <div class="switch-box">
+                            <p>Already have an account?</p>
+                            <button type="button" class="switch-btn" id="showLogin">Login</button>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

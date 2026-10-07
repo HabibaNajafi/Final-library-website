@@ -1,0 +1,200 @@
+:root {
+  --ink-900: #1B2A41;
+  --ink-700: #2E4258;
+  --parchment-50: #FBF8F1;
+  --parchment-100: #F4EEDF;
+  --brass-500: #B8873B;
+  --text-ink: #24303F;
+  --text-muted: #5B6B7C;
+  --white: #ffffff;
+  --border: rgba(27, 42, 65, 0.12);
+  --radius-lg: 30px;
+  --shadow-soft: 0 25px 60px rgba(27, 42, 65, 0.15);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Sora', 'Segoe UI', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--parchment-50), var(--parchment-100));
+  font-family: var(--font-body);
+  color: var(--text-ink);
+}
+
+.auto-container { width: 100%; max-width: 1000px; padding: 20px; }
+
+.auto-box {
+  position: relative;
+  width: 100%;
+  height: min(96vh, 660px);
+  background: var(--parchment-50);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- LEFT: brand panel ---------- */
+.slider-container { position: absolute; top: 0; left: 0; width: 42%; height: 100%; }
+
+.slider-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, var(--ink-900), var(--ink-700));
+  overflow: hidden;
+}
+
+/* the photo sits in the bottom part of the panel and fades into the navy */
+.slider-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 58%;
+  background: url("books-bg.jpg") center 60% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 40%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 40%);
+}
+
+.slider-content {
+  position: absolute;
+  inset: 0;
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--white);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 30px; font-weight: 600; }
+.brand-tagline { font-size: 13px; opacity: 0.8; margin: 6px 0 48px; }
+.slider-content h2 { font-family: var(--font-display); font-size: 34px; font-weight: 500; line-height: 1.2; margin-bottom: 14px; }
+.panel-text { font-size: 15px; line-height: 1.7; opacity: 0.9; }
+
+/* the panel buttons are not needed in this design (the form buttons switch instead) */
+.slider-content .outline-btn { display: none; }
+
+.register-panel { opacity: 0; visibility: hidden; }
+.auto-box.register-active .login-panel { opacity: 0; visibility: hidden; }
+.auto-box.register-active .register-panel { opacity: 1; visibility: visible; }
+
+/* ---------- RIGHT: forms ---------- */
+.forms-container { position: absolute; top: 0; right: 0; width: 58%; height: 100%; }
+
+.form {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 48px;
+  overflow-y: auto;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+}
+
+.register-form { opacity: 0; visibility: hidden; transform: translateX(24px); }
+.auto-box.register-active .login-form { opacity: 0; visibility: hidden; transform: translateX(-24px); }
+.auto-box.register-active .register-form { opacity: 1; visibility: visible; transform: none; }
+
+.form-content { width: 100%; max-width: 400px; margin: auto; }
+
+.form-header { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+.form-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--parchment-100);
+  font-size: 20px;
+}
+h1 { font-family: var(--font-display); font-size: 30px; font-weight: 600; color: var(--ink-900); }
+.form-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+
+.input-group { margin-bottom: 10px; }
+.input-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--ink-900); }
+.input-group input {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  border: 1.5px solid #E6E2D9;
+  border-radius: 14px;
+  background: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-ink);
+  outline: none;
+  transition: 0.3s;
+}
+.input-group input::placeholder { color: #94A3B8; }
+.input-group input:focus { border-color: var(--brass-500); box-shadow: 0 0 0 3px rgba(184, 135, 59, 0.15); }
+
+.form-options { display: flex; justify-content: space-between; align-items: center; font-size: 12px; margin-bottom: 16px; }
+.remember { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.forgot-link { color: var(--brass-500); text-decoration: none; }
+.forgot-link:hover { text-decoration: underline; }
+
+.main-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--ink-700), var(--ink-900));
+  color: var(--white);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: 0.3s;
+}
+.main-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(27, 42, 65, 0.25); }
+
+.message { min-height: 18px; margin-top: 8px; text-align: center; font-size: 13px; }
+.success { color: #2E8B68; }
+.error { color: #C85C6A; }
+
+.switch-box { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--border); text-align: center; font-size: 13px; }
+.switch-box p { margin-bottom: 8px; }
+.switch-btn {
+  width: 100%;
+  height: 42px;
+  border: 1.5px solid var(--brass-500);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--brass-500);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.switch-btn:hover { background: var(--brass-500); color: var(--white); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 800px) {
+  body { align-items: flex-start; }
+  .auto-box { height: auto; }
+  .slider-container { display: none; }
+  .forms-container { position: relative; width: 100%; height: auto; }
+  .form {
+    position: relative;
+    inset: auto;
+    padding: 36px 24px;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .register-form { display: none; }
+  .auto-box.register-active .login-form { display: none; }
+  .auto-box.register-active .register-form { display: flex; }
+  h1 { font-size: 30px; }
+}
