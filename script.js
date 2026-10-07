@@ -6,6 +6,13 @@
 const USERS_KEY = "booknest_users";
 const CURRENT_USER_KEY = "booknest_current_user";
 
+// Page names (change these if your files are named differently)
+const LOGIN_PAGE = "login.html";
+const HOME_PAGE = "Home.html";
+
+// Pages that need a logged-in user (write the names in lowercase)
+const PROTECTED_PAGES = ["home.html"];
+
 // ---- Get elements from the page ----
 // authBox only exists on the login page. If it is null, we are on another page.
 const authBox = document.querySelector(".auto-box");
@@ -54,7 +61,7 @@ function saveUsers(users) {
 
 // Read the logged-in user. Returns null if nobody is logged in.
 function getCurrentUser() {
-    const savedUser = localStorage.getItem(CURRENT_USER_KEY);
+    const savedUser = sessionStorage.getItem(CURRENT_USER_KEY); // session, not permanent
     if (!savedUser) {
         return null;
     }
@@ -114,7 +121,7 @@ function redirectIfLoggedIn() {
     if (getCurrentUser() !== null) {
         // replace() does not keep this page in the Back-button history,
         // so the user cannot go "back" to the login page.
-        window.location.replace("Home.html");
+        window.location.replace(HOME_PAGE);
         return true;
     }
     return false;
@@ -123,8 +130,25 @@ function redirectIfLoggedIn() {
 // Log the user out and go back to the login page.
 // You can call this from any page (see the logout button section at the bottom).
 function logoutUser() {
-    localStorage.removeItem(CURRENT_USER_KEY); // only removes the session, NOT the saved accounts
-    window.location.href = "index.html";
+    sessionStorage.removeItem(CURRENT_USER_KEY); // only ends the session, NOT the saved accounts
+    window.location.href = LOGIN_PAGE;
+}
+
+// Use this on pages that need a login (like Home.html).
+// If nobody is logged in, send the visitor to the login page.
+function checkAuth() {
+    if (getCurrentUser() === null) {
+        // replace() keeps the protected page out of the Back-button history
+        window.location.replace(LOGIN_PAGE);
+        return false;
+    }
+    return true;
+}
+
+// Is the page we are on listed in PROTECTED_PAGES?
+function isProtectedPage() {
+    const pageName = window.location.pathname.split("/").pop().toLowerCase();
+    return PROTECTED_PAGES.includes(pageName);
 }
 
 // ============================================
@@ -180,7 +204,8 @@ function registerUser() {
     }
 
     // Save the new user
-    users.push({ name: name, email: email, password: password });
+    // every account starts with its own empty favorites list
+    users.push({ name: name, email: email, password: password, favorites: [] });
     saveUsers(users);
 
     // Clear the registration form
@@ -231,13 +256,13 @@ function loginUser() {
         email: foundUser.email,
         loggedIn: true
     };
-    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(currentUser));
+    sessionStorage.setItem(CURRENT_USER_KEY, JSON.stringify(currentUser)); // cleared when the tab closes
 
     showMessage(loginMessage, "Login successful! Redirecting...", "success");
 
     // Short pause so the user can see the message, then go to Home.html
     setTimeout(function () {
-        window.location.href = "Home.html";
+        window.location.href = HOME_PAGE;
     }, 800);
 }
 
@@ -292,13 +317,29 @@ if (isAuthPage) {
 // ============================================
 // Logout button (works on any page that loads this file)
 // ============================================
-// On Home.html, give your logout button the id "logoutBtn".
-// If that button does not exist on the page, nothing happens.
-const logoutBtn = document.getElementById("logoutBtn");
+// Any of these will log the user out when clicked:
+//   - an element with id="logoutBtn"
+//   - an element with class="logout-btn"
+//   - an element with the attribute data-logout
+// If none of them exist on the page, nothing happens.
+const logoutButtons = document.querySelectorAll("#logoutBtn, .logout-btn, [data-logout]");
 
-if (logoutBtn) {
-    logoutBtn.addEventListener("click", function (event) {
-        event.preventDefault();
+logoutButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+        event.preventDefault(); // stops a link (<a href="#">) from jumping
         logoutUser();
     });
+});
+
+// ============================================
+// Protect pages + clean up old sessions
+// ============================================
+
+// Older versions saved the login in localStorage. Remove that leftover,
+// otherwise it would look like the user is still "permanently" logged in.
+localStorage.removeItem(CURRENT_USER_KEY);
+
+// On a protected page (like Home.html), a visitor who is not logged in is sent to login
+if (isProtectedPage()) {
+    checkAuth();
 }

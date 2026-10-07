@@ -265,43 +265,110 @@ const books = bookCatalog.filter(b => b.featured);
 const FALLBACK_COVER = "https://picsum.photos/seed/booknest-fallback/400/560";
 
 
-const FAVORITES_KEY = "booknest_favorites";
+/* ============================================================
+   FAVORITES - saved separately for each user account
+   ============================================================
+   Accounts live in localStorage ("booknest_users"). Each account has its own
+   favorites list:  { name, email, password, favorites: [ { id, title } ] }
+   The logged-in user is in sessionStorage ("booknest_current_user").
+   This block does not need script.js, so every page that loads scripttt.js works.
+   (The small helpers below also exist in script.js with the same behavior.) */
+const FAV_USERS_KEY = "booknest_users";
+const FAV_SESSION_KEY = "booknest_current_user";
 
+/* Read all saved accounts (empty list if none) */
+function getUsers() {
+  try {
+    return JSON.parse(localStorage.getItem(FAV_USERS_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+/* Save the accounts list back to localStorage */
+function saveUsers(users) {
+  localStorage.setItem(FAV_USERS_KEY, JSON.stringify(users));
+}
+
+/* Read the logged-in user from sessionStorage (null if nobody is logged in) */
+function getCurrentUser() {
+  try {
+    const user = JSON.parse(sessionStorage.getItem(FAV_SESSION_KEY));
+    return user && user.loggedIn === true ? user : null;
+  } catch {
+    return null;
+  }
+}
+
+/* Find the logged-in user's full account. Returns { users, account } or null. */
+function getCurrentAccount() {
+  const currentUser = getCurrentUser();
+  if (currentUser === null) return null;
+
+  const users = getUsers();
+  const account = users.find(user => user.email === currentUser.email);
+  if (!account) return null;
+
+  return { users, account };
+}
+
+/* Only the logged-in user's favorites ([] if nobody is logged in) */
 function getFavorites() {
-  try {
-    return new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY)) || []);
-  } catch {
-    return new Set();
-  }
+  const found = getCurrentAccount();
+  return found ? (found.account.favorites || []) : [];
 }
 
-function saveFavorites(set) {
-  try {
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify([...set]));
-  } catch {
-    
-  }
+function isFavorite(bookId) {
+  return getFavorites().some(favorite => favorite.id === Number(bookId));
 }
 
-function isFavorite(id) {
-  return getFavorites().has(Number(id));
+/* Add a book to the logged-in user's favorites. Returns true if added. */
+function addToFavorites(book) {
+  const found = getCurrentAccount();
+  if (!found) return false;
+
+  if (!found.account.favorites) found.account.favorites = [];
+  if (found.account.favorites.some(favorite => favorite.id === book.id)) return false;
+
+  found.account.favorites.push({ id: book.id, title: book.title });
+  saveUsers(found.users);
+  return true;
+}
+
+/* Remove a book from the logged-in user's favorites. Returns true if removed. */
+function removeFromFavorites(bookId) {
+  const found = getCurrentAccount();
+  if (!found) return false;
+
+  const oldList = found.account.favorites || [];
+  const newList = oldList.filter(favorite => favorite.id !== Number(bookId));
+  found.account.favorites = newList;
+  saveUsers(found.users);
+  return newList.length < oldList.length;
 }
 
 function toggleFavoriteState(id) {
   id = Number(id);
-  const favs = getFavorites();
-  const nowFavorite = !favs.has(id);
-  if (nowFavorite) {
-    favs.add(id);
-  } else {
-    favs.delete(id);
-  }
-  saveFavorites(favs);
-  syncFavoriteButtons(id, nowFavorite);
   const book = bookCatalog.find(b => b.id === id);
+  if (!book) return false;
+
+  /* Favorites belong to an account, so the visitor must be logged in */
+  if (getCurrentUser() === null) {
+    showToast("Please log in to save favorites.");
+    return false;
+  }
+
+  const nowFavorite = !isFavorite(id);
+  if (nowFavorite) {
+    addToFavorites(book);
+  } else {
+    removeFromFavorites(id);
+  }
+
+  syncFavoriteButtons(id, nowFavorite);
   showToast(nowFavorite
-    ? `Added "${book ? book.title : "book"}" to favorites`
-    : `Removed "${book ? book.title : "book"}" from favorites`);
+    ? `Added "${book.title}" to favorites`
+    : `Removed "${book.title}" from favorites`);
   return nowFavorite;
 }
 
@@ -618,14 +685,13 @@ function getFilteredSortedBooks() {
   const category = categorySelect?.value || "all";
   const sortBy = sortSelect?.value || "title-asc";
   const favOnly = favOnlyBtn?.getAttribute("aria-pressed") === "true";
-  const favorites = getFavorites();
 
   let list = bookCatalog.filter(book => {
     const matchesQuery = !query ||
       book.title.toLowerCase().includes(query) ||
       book.author.toLowerCase().includes(query);
     const matchesCategory = category === "all" || book.category === category;
-    const matchesFavorite = !favOnly || favorites.has(book.id);
+    const matchesFavorite = !favOnly || isFavorite(book.id);
     return matchesQuery && matchesCategory && matchesFavorite;
   });
 
