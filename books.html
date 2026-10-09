@@ -119,15 +119,20 @@
       <p id="modalBookDescription">
         A fascinating book available in our library collection.
       </p>
+      <!-- =====================new changes====================== -->
+            <p class="modal-borrow-info" id="modalBorrowInfo"></p>
 
       <div class="modal-buttons">
         <button class="favorite-btn" id="modalFavoriteBtn" type="button" data-id="">
           <i class="fa-regular fa-heart"></i> Add to Favorites
         </button>
-
-        <button id="closeBookModalBtn" type="button">
-          Close
+        <!-- ========================new======== -->
+                 <button class="borrow-btn" id="modalBorrowBtn" type="button" data-id="">
+          <i class="fa-solid fa-book-open-reader"></i> Borrow Book
         </button>
+
+        
+        
       </div>
     </div>
 
@@ -205,5 +210,7 @@
     <span id="toastMessage">Added to favorites</span>
 </div>
 <script src="scripttt.js"></script>
+<script src="./auth-ui.js"></script>
+<script src="booknest-lists.js"></script>
 </body>
 </html>

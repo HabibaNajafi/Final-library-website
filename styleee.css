@@ -2886,12 +2886,7 @@ body.dark-mode .footer-bottom{
     background:#0a121c;
 }
 /* Fix 1: Turn the Light Hero/Banner Section Dark in Dark Mode */
-body.dark-mode .hero-section,
-body.dark-mode .page-header,
-body.dark-mode .contact-hero,
-body.dark-mode [class*="hero"] {
-    background-color: #0d1826 !important;
-}
+
 
 /* Fix 2: Ensure Hero Title & Text are Bright White */
 body.dark-mode .hero-section h1,
@@ -3084,6 +3079,470 @@ body.dark-mode .hero-content p {
   z-index: 1;
 }
 
+/* ===== Borrow Book button and message (new) ===== */
+
+.borrow-btn {
+    background: var(--brass-500);
+    color: var(--ink-900);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.borrow-btn:hover {
+    background: #a97f34;
+}
+
+.borrow-btn:disabled {
+    background: #c9c3b6;
+    color: #6b6b6b;
+    cursor: not-allowed;
+}
+
+.modal-borrow-info {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #F4EEDF;
+    color: #1B2A41;
+    font-size: 0.9rem;
+}
+
+.modal-borrow-info:empty {
+    display: none;
+}
+
+body.dark-mode .modal-borrow-info {
+    background: #F4EEDF;
+    color: #1B2A41;
+}
+
+/* ===== Borrowed Books page (new) ===== */
+
+.loans-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px 70px;
+    min-height: 55vh;
+}
+
+.loans-title {
+    font-size: 2.2rem;
+    color: #1B2A41;
+    margin-bottom: 8px;
+}
+
+.loans-subtitle {
+    color: #5B6B7C;
+    margin-bottom: 30px;
+}
+
+.loans-list {
+    display: grid;
+    gap: 18px;
+}
+
+.loan-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #F4EEDF;
+    border: 1px solid #e6dcc3;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.loan-cover {
+    width: 90px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #e6dcc3;
+    flex-shrink: 0;
+}
+
+.loan-title {
+    font-size: 1.15rem;
+    color: #1B2A41;
+    margin-bottom: 4px;
+}
+
+.loan-author {
+    color: #5B6B7C;
+    margin-bottom: 10px;
+}
+
+.loan-date {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.loan-due-on {
+    color: #7A2E2E;
+}
+
+.loans-empty {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.loans-empty-link {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #B8873B;
+    color: #1B2A41;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+body.dark-mode .loan-card {
+    background: #1f3247;
+    border-color: #2c4359;
+}
+
+body.dark-mode .loan-due-on {
+    color: #F7C35F;
+}
+
+body.dark-mode a.loans-empty-link {
+    color: #1B2A41;
+}
+
+@media (max-width: 520px) {
+    .loan-cover {
+        width: 70px;
+        height: 95px;
+    }
+}
 
 
+/* ===== Header Login / Account button (new) ===== */
+
+/* ===== Header Login / Account button (new) ===== */
+
+.nav-left li {
+    display: flex;
+    align-items: center;
+}
+
+.booknest-auth-item {
+    position: relative;
+}
+
+li.booknest-auth-item a.booknest-login-btn {
+    flex-direction: row;
+    gap: 8px;
+    padding: 9px 20px;
+    border-radius: 30px;
+    background: #B8873B;
+    color: #1B2A41;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+li.booknest-auth-item a.booknest-login-btn i {
+    color: #1B2A41;
+    font-size: 0.9rem;
+}
+
+li.booknest-auth-item a.booknest-login-btn:hover {
+    background: #c89a43;
+    color: #1B2A41;
+}
+
+.booknest-account-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px 5px 6px;
+    border-radius: 30px;
+    border: 1px solid rgba(245, 240, 230, 0.35);
+    background: transparent;
+    color: #FBF8F1;
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.booknest-account-btn:hover {
+    border-color: #B8873B;
+}
+
+.booknest-account-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #B8873B;
+    color: #1B2A41;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booknest-account-name {
+    font-weight: 600;
+    color: #FBF8F1;
+}
+
+.booknest-account-chevron {
+    font-size: 0.7rem;
+    color: #B8873B;
+}
+
+.booknest-account-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 220px;
+    padding: 8px;
+    border-radius: 12px;
+    background: #1B2A41;
+    border: 1px solid rgba(245, 240, 230, 0.2);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    z-index: 1200;
+}
+
+.booknest-account-menu[hidden] {
+    display: none;
+}
+
+.booknest-account-head {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 10px 10px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(245, 240, 230, 0.15);
+    color: #FBF8F1;
+}
+
+.booknest-account-head small {
+    color: rgba(251, 248, 241, 0.65);
+    word-break: break-all;
+}
+
+li.booknest-auth-item .booknest-account-menu a,
+.booknest-account-menu button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #FBF8F1;
+    font: inherit;
+    font-size: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+li.booknest-auth-item .booknest-account-menu a:hover,
+.booknest-account-menu button:hover {
+    background: #2E4258;
+    color: #FBF8F1;
+}
+
+body.dark-mode li.booknest-auth-item a.booknest-login-btn,
+body.dark-mode li.booknest-auth-item a.booknest-login-btn i {
+    color: #1B2A41;
+}
+
+body.dark-mode li.booknest-auth-item .booknest-account-menu a {
+    color: #FBF8F1;
+}
+
+body.dark-mode .booknest-account-menu {
+    background: #0d1826;
+}
+
+@media (max-width: 900px) {
+    .booknest-auth-item {
+        padding: 10px 0;
+    }
+    .booknest-account-menu {
+        position: static;
+        margin-top: 10px;
+        min-width: 0;
+    }
+}
+
+
+/* Keep background image visible on hero section in dark mode */
+body.dark-mode .hero,
+body.dark .hero,
+[data-theme="dark"] .hero {
+  background-color: transparent !important;
+}
+
+/* Ensure hero text card uses a clear, semi-transparent background overlay */
+body.dark-mode .hero-card,
+body.dark .hero-card,
+[data-theme="dark"] .hero-card {
+  background: rgba(15, 23, 42, 0.75) !important; /* Semi-transparent dark overlay */
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 1. Preserve Gold "Browse the Catalog" Primary Button */
+body.dark-mode .hero .btn-primary,
+body.dark-mode .hero .btn-gold,
+body.dark-mode .hero .browse-btn,
+body.dark .browse-btn {
+  background-color: #d4a359 !important;
+  color: #1a2b49 !important;
+  border-color: #d4a359 !important;
+}
+
+/* 2. Preserve "Become a Member" Secondary Outlined Button */
+body.dark-mode .hero .btn-secondary,
+body.dark-mode .hero .btn-outline,
+body.dark .btn-outline {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+body.dark-mode .hero .btn-secondary:hover,
+body.dark-mode .hero .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* 3. Keep Gold Numbers/Stats Visible */
+body.dark-mode .stat-number,
+body.dark .stat-number {
+  color: #d4a359 !important;
+}
+
+/* 4. Keep Main Hero Heading Text White */
+body.dark-mode .hero h1,
+body.dark-mode .hero h2,
+body.dark-mode .hero p {
+  color: #ffffff !important;
+}
+/* ============================================================
+   DARK MODE OVERRIDES (Applies when dark mode is active)
+   ============================================================ */
+
+body.dark-mode,
+body.dark,
+[data-theme="dark"] {
+  --parchment-50: #0f172a;  /* Dark navy page background */
+  --parchment-100: #1e293b; /* Dark card background */
+  --text-ink: #f8fafc;      /* Light primary text */
+  --text-muted: #94a3b8;    /* Muted secondary text */
+  background-color: var(--parchment-50) !important;
+  color: var(--text-ink) !important;
+}
+
+/* 1. Hero Section Fixes */
+body.dark-mode .hero,
+body.dark .hero,
+[data-theme="dark"] .hero {
+  background-color: transparent !important;
+}
+
+body.dark-mode .hero-title,
+body.dark-mode .hero-lede,
+body.dark .hero-title,
+body.dark .hero-lede {
+  color: #ffffff !important;
+}
+
+/* Preserve Browse Catalog Button */
+body.dark-mode .btn-primary,
+body.dark .btn-primary {
+  background: var(--brass-500) !important;
+  color: var(--ink-900) !important;
+}
+
+/* Preserve Outline Button */
+body.dark-mode .btn-outline,
+body.dark .btn-outline {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* 2. Remove Hardcoded Light Backgrounds on Sections */
+body.dark-mode .virtual-bookshelf,
+body.dark-mode .categories-section,
+body.dark-mode .readers-section,
+body.dark-mode .collection-section,
+body.dark-mode .news-section,
+body.dark-mode .catalog-controls,
+body.dark .virtual-bookshelf,
+body.dark .categories-section,
+body.dark .readers-section,
+body.dark .collection-section,
+body.dark .news-section,
+body.dark .catalog-controls {
+  background: var(--parchment-50) !important;
+}
+
+/* 3. Cards & Modals Dark Overrides */
+body.dark-mode .book-card,
+body.dark-mode .category-card,
+body.dark-mode .reader-card,
+body.dark-mode .news-card,
+body.dark-mode .book-modal-content,
+body.dark .book-card,
+body.dark .category-card,
+body.dark .reader-card,
+body.dark .news-card,
+body.dark .book-modal-content {
+  background: var(--parchment-100) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 4. Text & Heading Fixes in Dark Mode */
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4,
+body.dark-mode .virtual-bookshelf h2,
+body.dark-mode .category-card h3,
+body.dark-mode .reader-content h3,
+body.dark-mode .collection-header h2,
+body.dark-mode .news-header h2,
+body.dark-mode .book-info h4,
+body.dark h1, body.dark h2, body.dark h3, body.dark h4 {
+  color: #f8fafc !important;
+}
+
+body.dark-mode p,
+body.dark-mode .reader-content p,
+body.dark-mode .collection-header p,
+body.dark-mode .author,
+body.dark-mode .rating,
+body.dark p {
+  color: var(--text-muted) !important;
+}
+
+/* 5. Input Fields & Select Boxes */
+body.dark-mode .search-box,
+body.dark-mode .catalog-controls select,
+body.dark-mode .favorite-btn,
+body.dark .search-box,
+body.dark .catalog-controls select,
+body.dark .favorite-btn {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .search-box input,
+body.dark .search-box input {
+  color: #f8fafc !important;
+  background: transparent !important;
+}
 

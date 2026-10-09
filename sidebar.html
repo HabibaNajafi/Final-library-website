@@ -1,0 +1,119 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <style>
+        .sidebar{
+    width:220px;
+    height:100vh;
+    background:#1B2A41;
+    color:#FBF8F1;
+    position:fixed;
+    left:0;
+    top:0;
+    display:flex;
+    flex-direction:column;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.profile{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.profile img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:3px solid #B8873B;
+    object-fit:cover;
+}
+
+.profile h3{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.nav-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#FBF8F1;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    background:#2E4258;
+    color:#B8873B;
+}
+
+.logout-btn{
+    margin-top:auto;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#7A2E2E;
+    color:white;
+    cursor:pointer;
+}
+    </style>
+    <div class="sidebar">
+    <div class="profile">
+        <img src="images/profile.png" alt="Profile">
+        <h3>Habiba Najafi</h3>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav-link active">
+            <i class="fas fa-home"></i>
+            <a href="home.html"><span>Home</span></a>
+        </a>
+
+        <a href="saved-books.html" class="nav-link">
+            <i class="fas fa-book"></i>
+            <span>Saved Books</span>
+        </a>
+
+        <a href="favorites.html" class="nav-link">
+            <i class="fas fa-heart"></i>
+            <span>Favorites</span>
+        </a>
+    </nav>
+
+    <button id="logoutBtn" class="logout-btn">
+        <i class="fas fa-sign-out-alt"></i>
+        Logout
+    </button>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    logoutBtn?.addEventListener("click", () => {
+
+        sessionStorage.removeItem("currentUser");
+
+        alert("You have been logged out.");
+
+        window.location.href = "login.html";
+    });
+
+});
+</script>
+
+    
+ </body>
+ </html>
+ 
+ 

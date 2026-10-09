@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Borrowed Books - BookNest</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* ============================================================
+       PAGE STYLES
+       ============================================================ */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f7f5ed;
+      color: #1a2b49;
+      margin: 0;
+      padding: 0;
+    }
+
+    main.container {
+      max-width: 1000px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    /* Back to Home Link */
+    .back-home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #1a2b49;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      transition: color 0.2s ease;
+    }
+
+    .back-home-link:hover {
+      color: #d4a359;
+    }
+
+    /* Page Heading */
+    main.container h2 {
+      color: #1a2b49;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #d4a359;
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+
+    /* 3-Column Compact Grid */
+    #loansList,
+    .loans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    /* Compact Borrowed Book Card */
+    .loan-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .loan-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Book Cover Image */
+    .loan-cover {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #edf2f7;
+      display: block;
+    }
+
+    /* Details Section */
+    .loan-info {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .loan-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a2b49;
+      margin: 0 0 4px 0;
+      line-height: 1.25;
+    }
+
+    .loan-author {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin: 0 0 10px 0;
+    }
+
+    /* Dates Box */
+    .loan-dates {
+      margin-top: auto;
+      background-color: #f8fafc;
+      border: 1px solid #edf2f7;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+    }
+
+    .loan-dates p {
+      margin: 2px 0;
+      display: flex;
+      justify-content: space-between;
+      color: #4a5568;
+    }
+
+    .loan-borrowed-on {
+      font-weight: 600;
+      color: #1a2b49;
+    }
+
+    .loan-due-on {
+      font-weight: 600;
+      color: #c53030;
+    }
+
+    /* Empty State */
+    #loansEmpty {
+      text-align: center;
+      padding: 50px 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px dashed #cbd5e1;
+      margin-top: 20px;
+    }
+
+    #loansEmptyText {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    #loansEmptyLink {
+      display: inline-block;
+      padding: 8px 18px;
+      background-color: #d4a359;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      #loansList,
+      .loans-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      #loansList,
+      .loans-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <!-- Back to Home Link -->
+    <a href="home.html" class="back-home-link">
+      <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+
+    <div>
+      <h2>My Borrowed Books</h2>
+    </div>
+
+    <!-- Container where borrowed books are rendered -->
+    <div id="loansList" class="loans-grid"></div>
+
+    <!-- Empty state -->
+    <div id="loansEmpty" hidden>
+      <p id="loansEmptyText">You have not borrowed any books yet.</p>
+      <a id="loansEmptyLink" href="books.html">Browse books</a>
+    </div>
+
+    <!-- Card Template -->
+    <template id="loanCardTemplate">
+      <div class="loan-card">
+        <img class="loan-cover" src="" alt="Book Cover" />
+        <div class="loan-info">
+          <h3 class="loan-title"></h3>
+          <p class="loan-author"></p>
+          <div class="loan-dates">
+            <p><span>Borrowed on:</span> <span class="loan-borrowed-on"></span></p>
+            <p><span>Return date:</span> <span class="loan-due-on"></span></p>
+          </div>
+        </div>
+      </div>
+    </template>
+  </main>
+
+  <script src="scripttt.js"></script>
+</body>
+</html>

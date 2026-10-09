@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | BookNest</title>
+
+    <link rel="stylesheet" href="./profile.css">
+
+    <!-- If you already use Font Awesome on your website,
+         keep the same Font Awesome link from your other pages. -->
+    <script src="profile.js" defer></script>
+</head>
+
+<body>
+    <main class="profile-container">
+        <a href="home.html" class="back-link">← Back to Home</a>
+
+        <section class="profile-card">
+            <div class="profile-heading">
+                <div class="profile-avatar" id="profileAvatar">?</div>
+
+                <div>
+                    <p class="eyebrow">BOOKNEST ACCOUNT</p>
+                    <h1>My Profile</h1>
+                    <p class="subtitle">Manage your personal information.</p>
+                </div>
+            </div>
+
+            <div id="profileMessage" class="profile-message" hidden></div>
+
+            <div id="profileDetails">
+                <div class="profile-field">
+                    <span>Full Name</span>
+                    <p id="profileName">Loading...</p>
+                </div>
+
+                <div class="profile-field">
+                    <span>Email Address</span>
+                    <p id="profileEmail">Loading...</p>
+                </div>
+
+                <div class="profile-field">
+                    <span>Account Status</span>
+                    <p><span class="status-badge">Logged In</span></p>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <a href="home.html" class="home-button">Return to Home</a>
+                <button type="button" id="profileLogout" class="logout-button">
+                    Logout
+                </button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

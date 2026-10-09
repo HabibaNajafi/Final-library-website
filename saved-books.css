@@ -1,0 +1,234 @@
+
+.saved-books-page {
+    margin: 0;
+    min-height: 100vh;
+    background: #FBF8F1;
+    color: #24303F;
+    font-family: Arial, sans-serif;
+}
+
+.saved-books-page *,
+.saved-books-page *::before,
+.saved-books-page *::after {
+    box-sizing: border-box;
+}
+
+.saved-page-container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+    padding: 35px 0 60px;
+}
+
+.saved-back-link {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: #2E4258;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.saved-back-link:hover {
+    color: #B8873B;
+}
+
+.saved-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 32px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #E8E0D2;
+}
+
+.saved-eyebrow {
+    margin: 0 0 9px;
+    color: #B8873B;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.saved-page-header h1 {
+    margin: 0;
+    color: #1B2A41;
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 42px);
+}
+
+.saved-subtitle {
+    margin: 10px 0 0;
+    color: #5B6B7C;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.saved-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    min-height: 80px;
+    padding: 12px;
+    border: 1px solid #E8D9BB;
+    border-radius: 14px;
+    background: #F4EEDF;
+    color: #1B2A41;
+}
+
+.saved-count span:first-child {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.saved-count span:last-child {
+    margin-top: 3px;
+    color: #5B6B7C;
+    font-size: 12px;
+}
+
+.saved-books-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.saved-book-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #E8E0D2;
+    border-radius: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 5px 18px rgba(27, 42, 65, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.saved-book-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(27, 42, 65, 0.10);
+}
+
+.saved-book-cover {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #F4EEDF;
+}
+
+.saved-book-title {
+    margin: 15px 0 6px;
+    color: #1B2A41;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.saved-book-author {
+    margin: 0 0 18px;
+    color: #5B6B7C;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.saved-remove-button {
+    width: 100%;
+    margin-top: auto;
+    padding: 10px 12px;
+    border: 1px solid #D9BDB8;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #7A2E2E;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.saved-remove-button:hover {
+    background: #FAEEEE;
+}
+
+.saved-empty-state {
+    padding: 60px 20px;
+    border: 1px dashed #D8CBB5;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.saved-empty-icon {
+    margin-bottom: 14px;
+    font-size: 42px;
+}
+
+.saved-empty-state h2 {
+    margin: 0 0 10px;
+    color: #1B2A41;
+    font-family: Georgia, serif;
+}
+
+.saved-empty-state p {
+    max-width: 420px;
+    margin: 0 auto 22px;
+    color: #5B6B7C;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.saved-browse-button {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #1B2A41;
+    color: #FFFFFF;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.saved-browse-button:hover {
+    background: #2E4258;
+}
+
+.saved-empty-state[hidden] {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .saved-books-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .saved-page-container {
+        padding-top: 24px;
+    }
+
+    .saved-page-header {
+        align-items: flex-start;
+    }
+
+    .saved-count {
+        min-width: 65px;
+        min-height: 65px;
+    }
+
+    .saved-books-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .saved-book-card {
+        padding: 10px;
+    }
+
+    .saved-book-cover {
+        height: 175px;
+    }
+}

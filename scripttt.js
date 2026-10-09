@@ -19,8 +19,8 @@ const bookCatalog = [
   category: "Science Fiction",
   rating: 4.1,
   year: 2019,
-  status: "reserved",
-  image: "https://picsum.photos/seed/booknest-static/400/560",
+  status: "available",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrBx6KJGGME292GsUZvLxowqDcNsg7vsLzjoZGrh0Fz1OGtKYzuS8y_QDT&s=10",
   featured: false,
   description: "On a slow-drifting colony ship, a communications officer starts hearing something in the static that shouldn't be there."
 },
@@ -45,8 +45,8 @@ const bookCatalog = [
   category: "History",
   rating: 4.0,
   year: 2016,
-  status: "reserved",
-  image: "https://picsum.photos/seed/booknest-exchange/400/560",
+  status: "available",
+  image: "https://c8.alamy.com/comp/RA83RH/open-book-picture-writing-reading-outdoors-hygge-concept-relaxing-isolated-taking-it-easy-downtime-relax-relaxing-educate-food-garden-blurred-RA83RH.jpg",
   featured: false,
   description: "A social history of a single trading-house building, and the four centuries of commerce that passed through its doors."
 },
@@ -83,7 +83,7 @@ const bookCatalog = [
   category: "Mystery & Thriller",
   rating: 4.3,
   year: 2020,
-  status: "reserved",
+  status: "available",
   image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgDU74aCblmJfrSy-AwsmGKiMcm5awZvzd0Psa52BR2A&s",
   featured: false,
   description: "A lighthouse keeper's logbook holds the only clue to a disappearance the village would rather forget."
@@ -109,7 +109,7 @@ const bookCatalog = [
   category: "History",
   rating: 4.6,
   year: 2022,
-  status: "reserved",
+  status: "available",
   image: "https://bdlcontent.storage.googleapis.com/wp-content/uploads/2022/02/08193812/Empires-of-the-Sea-324x507.jpg",
   featured: true,
   description: "A sweeping account of the trade routes, ports, and people that shaped a maritime empire."
@@ -123,7 +123,7 @@ const bookCatalog = [
   rating: 4.4,
   year: 2023,
   status: "available",
-  image: "https://picsum.photos/seed/booknest-windowlight/400/560",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhgKcLMG6qv5eXIO7IMZ0D0Wqzv11Ra2ujfDsHLWTDVudP5FU-Sq_FcHs&s=10",
   featured: false,
   description: "Two rival booksellers on the same street learn that the best chapters are the ones they write together."
 },
@@ -136,7 +136,7 @@ const bookCatalog = [
   rating: 4.2,
   year: 2021,
   status: "available",
-  image: "https://picsum.photos/seed/booknest-dusk/400/560",
+  image: "https://i.pinimg.com/736x/ae/bf/f0/aebff0ed085370362da5a37c09fb39ae.jpg",
   featured: false,
   description: "A decade after a small-town breakup, two old friends are thrown back together for one long summer."
 },
@@ -148,8 +148,8 @@ const bookCatalog = [
   category: "Poetry",
   rating: 4.5,
   year: 2020,
-  status: "reserved",
-  image: "https://picsum.photos/seed/booknest-almanacs/400/560",
+  status: "available",
+  image: "https://plus.unsplash.com/premium_photo-1725408045441-caab8be43801?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Ym9vayUyMHRleHR8ZW58MHx8MHx8fDA%3D",
   featured: false,
   description: "A collection tracking a single year, season by season, in short, unsparing lines."
 },
@@ -162,7 +162,7 @@ const bookCatalog = [
   rating: 4.1,
   year: 2019,
   status: "available",
-  image: "https://picsum.photos/seed/booknest-smallhours/400/560",
+  image: "https://i.pinimg.com/236x/d0/e9/a4/d0e9a4ded6bc0505957318cf6b799108.jpg",
   featured: false,
   description: "Poems written between midnight and dawn, about the thoughts that only show up when no one else is awake."
 },
@@ -175,7 +175,7 @@ const bookCatalog = [
   rating: 4.3,
   year: 2023,
   status: "available",
-  image: "https://picsum.photos/seed/booknest-beginning/400/560",
+  image: "https://i.pinimg.com/736x/e1/d9/83/e1d98383152744920531826ced183293.jpg",
   featured: false,
   description: "A practical, no-nonsense guide to starting the projects you keep putting off."
 },
@@ -188,7 +188,7 @@ const bookCatalog = [
   rating: 4.0,
   year: 2017,
   status: "reserved",
-  image: "https://picsum.photos/seed/booknest-confidence/400/560",
+  image: "https://i.pinimg.com/736x/3c/81/0d/3c810deb946b18db150a3c472afa2602.jpg",
   featured: false,
   description: "A guide to steady self-assurance for people who would rather not raise their voice to be heard."
 },
@@ -201,7 +201,7 @@ const bookCatalog = [
   rating: 4.4,
   year: 2021,
   status: "available",
-  image: "https://picsum.photos/seed/booknest-orchard/400/560",
+  image: "https://i.pinimg.com/1200x/55/4d/8f/554d8f49db7e9d6c758885aa410fb1e6.jpg",
   featured: false,
   description: "One year in an old family orchard, told through the diary of the woman who refuses to let it go."
 },
@@ -214,7 +214,7 @@ const bookCatalog = [
   rating: 4.7,
   year: 2024,
   status: "reserved",
-  image: "https://picsum.photos/seed/booknest-letters/400/560",
+  image: "https://i.pinimg.com/736x/bb/2e/27/bb2e277bb2a26a5f0f75a41582006e0c.jpg",
   featured: true,
   description: "A box of unsent letters resurfaces a hundred years late, and finally finds the reader they were meant for."
 },
@@ -227,7 +227,7 @@ const bookCatalog = [
   rating: 4.5,
   year: 2022,
   status: "available",
-  image: "https://picsum.photos/seed/booknest-cartogram/400/560",
+  image: "https://i.pinimg.com/736x/76/6c/5d/766c5d288fcecd9388ed9dcbf5f5ae98.jpg",
   featured: false,
   description: "The last living mapmaker of a dying planet races to chart it before the borders stop meaning anything."
 },
@@ -240,7 +240,7 @@ const bookCatalog = [
   rating: 4.2,
   year: 2020,
   status: "available",
-  image: "https://picsum.photos/seed/booknest-ledger/400/560",
+  image: "https://i.pinimg.com/736x/88/dc/97/88dc97e498a0b1973530fb2204f0c459.jpg",
   featured: false,
   description: "A night-shift accountant finds one column of numbers that doesn't add up, and shouldn't exist."
 },
@@ -253,7 +253,7 @@ const bookCatalog = [
   rating: 4.6,
   year: 2018,
   status: "reserved",
-  image: "https://picsum.photos/seed/booknest-rooms/400/560",
+  image: "https://i.pinimg.com/1200x/86/6b/31/866b319603a1ae3c8c4c43689a91ea9a.jpg",
   featured: true,
   description: "The memoir of a translator who carried three languages and one very small apartment across two continents."
 }
@@ -354,7 +354,7 @@ function toggleFavoriteState(id) {
 
   /* Favorites belong to an account, so the visitor must be logged in */
   if (getCurrentUser() === null) {
-    showToast("Please log in to save favorites.");
+    window.location.href = "login.html";
     return false;
   }
 
@@ -389,6 +389,134 @@ function syncFavoriteButtons(id, isFav) {
       : '<i class="fa-regular fa-heart"></i> Add to Favorites';
   }
 }
+
+// =============new=============
+/* ============================================================
+   BORROW BOOKS - saved separately for each user account
+   ============================================================ */
+const LOAN_DAYS = 14;
+
+function getBorrowedBooks() {
+  const found = getCurrentAccount();
+  return found ? (found.account.borrowed || []) : [];
+}
+
+function hasBorrowed(bookId) {
+  return getBorrowedBooks().some(loan => loan.id === Number(bookId));
+}
+
+function isOnLoan(bookId) {
+  return getUsers().some(user =>
+    (user.borrowed || []).some(loan => loan.id === Number(bookId))
+  );
+}
+
+function formatLoanDate(isoString) {
+  return new Date(isoString).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  });
+}
+
+function borrowBook(book) {
+  const found = getCurrentAccount();
+  if (!found) return false;
+  if (book.status === "reserved" || isOnLoan(book.id)) return false;
+
+  const borrowedOn = new Date();
+  const dueDate = new Date();
+  dueDate.setDate(dueDate.getDate() + LOAN_DAYS);
+
+  if (!found.account.borrowed) found.account.borrowed = [];
+  found.account.borrowed.push({
+    id: book.id,
+    title: book.title,
+    borrowedOn: borrowedOn.toISOString(),
+    dueDate: dueDate.toISOString()
+  });
+  saveUsers(found.users);
+  return true;
+}
+
+// =================new==============
+function updateBorrowUI(book) {
+  const borrowBtn = document.getElementById("modalBorrowBtn");
+  const infoEl = document.getElementById("modalBorrowInfo");
+  const statusEl = document.getElementById("modalBookStatus");
+  if (!borrowBtn || !infoEl) return;
+
+  borrowBtn.dataset.id = book.id;
+
+  const loan = getBorrowedBooks().find(item => item.id === book.id);
+  const unavailable = book.status === "reserved" || isOnLoan(book.id);
+
+  if (loan) {
+    borrowBtn.disabled = true;
+    borrowBtn.innerHTML = '<i class="fa-solid fa-check"></i> Borrowed';
+    infoEl.textContent = "Due back on " + formatLoanDate(loan.dueDate);
+  } else if (unavailable) {
+    borrowBtn.disabled = true;
+    borrowBtn.innerHTML = '<i class="fa-solid fa-book-open-reader"></i> Not available';
+    infoEl.textContent = "This book is currently on loan.";
+  } else if (getCurrentUser() === null) {
+    borrowBtn.disabled = false;
+    borrowBtn.innerHTML = '<i class="fa-solid fa-book-open-reader"></i> Borrow Book';
+    infoEl.textContent = "Please log in to borrow this book.";
+  } else {
+    borrowBtn.disabled = false;
+    borrowBtn.innerHTML = '<i class="fa-solid fa-book-open-reader"></i> Borrow Book';
+    infoEl.textContent = "Borrow for " + LOAN_DAYS + " days. Collect it at the library desk.";
+  }
+
+  if (statusEl && (loan || unavailable) && book.status !== "reserved") {
+    statusEl.textContent = "On loan";
+    statusEl.className = "modal-status status-reserved";
+  }
+}
+
+function renderBorrowedBooksPage() {
+  const list = document.getElementById("loansList");
+  const emptyBox = document.getElementById("loansEmpty");
+  const template = document.getElementById("loanCardTemplate");
+  if (!list || !emptyBox || !template) return;
+
+  list.innerHTML = "";
+
+  if (getCurrentUser() === null) {
+    document.getElementById("loansEmptyText").textContent = "Please log in to see your borrowed books.";
+    const link = document.getElementById("loansEmptyLink");
+    link.textContent = "Go to login";
+    link.setAttribute("href", "index.html");
+    emptyBox.hidden = false;
+    return;
+  }
+
+  const loans = getBorrowedBooks().slice().sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+  emptyBox.hidden = loans.length !== 0;
+
+  loans.forEach(loan => {
+    const book = bookCatalog.find(item => item.id === loan.id) || {};
+    const card = template.content.cloneNode(true);
+
+    const cover = card.querySelector(".loan-cover");
+    cover.src = book.image || FALLBACK_COVER;
+    cover.alt = "Cover of " + loan.title;
+    cover.onerror = function () {
+      cover.onerror = null;
+      cover.src = FALLBACK_COVER;
+    };
+
+    card.querySelector(".loan-title").textContent = loan.title;
+    card.querySelector(".loan-author").textContent = book.author ? "by " + book.author : "";
+    card.querySelector(".loan-borrowed-on").textContent = formatLoanDate(loan.borrowedOn);
+    card.querySelector(".loan-due-on").textContent = formatLoanDate(loan.dueDate);
+
+    list.appendChild(card);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", renderBorrowedBooksPage);
 
 /* ============================================================
    TOAST NOTIFICATIONS
@@ -507,6 +635,8 @@ function openBookModal(book) {
       : '<i class="fa-regular fa-heart"></i> Add to Favorites';
   }
 
+    updateBorrowUI(book);
+
   modal.classList.add("active");
   document.body.classList.add("modal-open");
 
@@ -546,6 +676,25 @@ function initBookModal() {
   document.getElementById("modalFavoriteBtn")?.addEventListener("click", (e) => {
     const id = e.currentTarget.dataset.id;
     if (id) toggleFavoriteState(id);
+  });
+
+  // new=====================
+  
+  document.getElementById("modalBorrowBtn")?.addEventListener("click", (e) => {
+    const id = Number(e.currentTarget.dataset.id);
+    const book = bookCatalog.find(item => item.id === id);
+    if (!book) return;
+
+    if (getCurrentUser() === null) {
+      window.location.href = "login.html";
+      return;
+    }
+    if (borrowBook(book)) {
+      showToast('You borrowed "' + book.title + '".');
+      updateBorrowUI(book);
+    } else {
+      showToast("Sorry, this book is not available right now.");
+    }
   });
 }
 
@@ -736,6 +885,15 @@ function renderBooksGrid() {
 }
 
 function initBooksPage() {
+  // Add this check inside your books page initialization script
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get("favorites") === "true") {
+  const favOnlyBtn = document.getElementById("favOnlyToggle");
+  if (favOnlyBtn) {
+    favOnlyBtn.setAttribute("aria-pressed", "true");
+    favOnlyBtn.classList.add("active");
+  }
+}
   const grid = document.getElementById("booksGrid");
   if (!grid) return;
 
@@ -1153,7 +1311,7 @@ function initMembershipPage() {
       return;
     }
 
-    showToast(`Welcome to BookNest, ${fullName.value.trim().split(" ")[0]}! Your ${selectedPlan} registration is in.`);
+    showToast(`Welcome to BookNest, ${fullName.value.trim().split(" ")[0]}! Please collect your membership card from the front desk. Your ${selectedPlan} registration is in.`);
     regForm.reset();
     document.querySelectorAll(".plan-card").forEach(c => c.classList.remove("plan-selected"));
     if (selectedPlanText) selectedPlanText.textContent = "None selected";
@@ -1252,43 +1410,13 @@ prevBtn.addEventListener('click', () => {
     updateShelf(currentIndex);
 });
 
+const logoutButtons = document.querySelectorAll("#logoutBtn, .logout-btn, [data-logout]");
 
-// login button=======================
-// document.addEventListener('DOMContentLoaded', () => {
-//     const openBtn = document.getElementById('openAuthModal');
-//     const closeBtn = document.getElementById('closeAuthModal');
-//     const overlay = document.getElementById('authModalOverlay');
-//     const togglePassword = document.getElementById('togglePassword');
-//     const passwordInput = document.getElementById('userPassword');
-
-//     if (openBtn && overlay && closeBtn) {
-//         // Open Modal
-//         openBtn.addEventListener('click', () => {
-//             overlay.classList.add('active');
-//         });
-
-//         // Close Modal
-//         closeBtn.addEventListener('click', () => {
-//             overlay.classList.remove('active');
-//         });
-
-//         // Close when clicking outside card
-//         overlay.addEventListener('click', (e) => {
-//             if (e.target === overlay) {
-//                 overlay.classList.remove('active');
-//             }
-//         });
-//     }
-
-//     if (togglePassword && passwordInput) {
-//         // Toggle Password Eye Icon
-//         togglePassword.addEventListener('click', () => {
-//             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-//             passwordInput.setAttribute('type', type);
-//             togglePassword.classList.toggle('fa-eye');
-//             togglePassword.classList.toggle('fa-eye-slash');
-//         });
-//     }
-// });
+logoutButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+        event.preventDefault(); // stops a link (<a href="#">) from jumping
+        logoutUser();
+    });
+});
 
 

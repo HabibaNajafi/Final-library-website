@@ -8,7 +8,7 @@ const CURRENT_USER_KEY = "booknest_current_user";
 
 // Page names (change these if your files are named differently)
 const LOGIN_PAGE = "login.html";
-const HOME_PAGE = "Home.html";
+const HOME_PAGE = "home.html";
 
 // Pages that need a logged-in user (write the names in lowercase)
 const PROTECTED_PAGES = ["home.html"];
@@ -117,11 +117,27 @@ function validatePassword(password) {
 
 // If the user is already logged in, send them to Home.html.
 // Returns true if we redirected, false if not.
+
+// Where should we send the user after login?
+// If the address has ?next=books.html we go there, otherwise to the home page.
+function getReturnPage() {
+    const params = new URLSearchParams(window.location.search);
+    const next = params.get("next");
+
+    // Only allow a simple page name like books.html or books.html?id=3
+    // (this blocks addresses like https://other-site.com)
+    const safePage = /^[A-Za-z0-9_-]+\.html(\?[A-Za-z0-9_=&%.-]*)?$/;
+
+    if (next && safePage.test(next) && !next.startsWith("login.html")) {
+        return next;
+    }
+    return HOME_PAGE;
+}
 function redirectIfLoggedIn() {
     if (getCurrentUser() !== null) {
         // replace() does not keep this page in the Back-button history,
         // so the user cannot go "back" to the login page.
-        window.location.replace(HOME_PAGE);
+                window.location.replace(getReturnPage());
         return true;
     }
     return false;
@@ -262,7 +278,7 @@ function loginUser() {
 
     // Short pause so the user can see the message, then go to Home.html
     setTimeout(function () {
-        window.location.href = HOME_PAGE;
+                window.location.href = getReturnPage();
     }, 800);
 }
 

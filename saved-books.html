@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Books | BookNest</title>
+
+    <link rel="stylesheet" href="saved-books.css">
+
+    <!-- Load the existing saved-book functions first -->
+    <script src="booknest-lists.js" defer></script>
+    <script src="saved-books.js" defer></script>
+</head>
+
+<body class="saved-books-page">
+
+    <main class="saved-page-container">
+
+        <a href="home.html" class="saved-back-link">
+            &larr; Back to Home
+        </a>
+
+        <header class="saved-page-header">
+            <div>
+                <p class="saved-eyebrow">YOUR PERSONAL COLLECTION</p>
+                <h1>Saved Books</h1>
+                <p class="saved-subtitle">
+                    Keep the books you want to explore in one place.
+                </p>
+            </div>
+
+            <div class="saved-count">
+                <span id="savedCount">0</span>
+                <span>Saved</span>
+            </div>
+        </header>
+
+        <section class="saved-content">
+            <div id="savedBooksGrid" class="saved-books-grid"></div>
+
+            <div id="savedEmptyState" class="saved-empty-state" hidden>
+                <div class="saved-empty-icon">&#128278;</div>
+                <h2>No saved books yet</h2>
+                <p>
+                    Explore the BookNest catalog and save books
+                    you would like to read later.
+                </p>
+                <a href="brows-books.html" class="saved-browse-button">
+                    Browse Books
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

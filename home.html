@@ -17,7 +17,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     </button>
       
     <ul class="nav-left" id="navLeft">
-        <li><button type="button" id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button></li>
+        
         <li><a href="./home.html" aria-current="page"><i class="fas fa-house"></i> Home</a></li>
         <li><a href="books.html"><i class="fas fa-book"></i> Books</a></li>
         <li><a href="categories.html"><i class="fas fa-layer-group"></i> Categories</a></li>
@@ -130,10 +130,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       <p id="modalBookDescription">
         A fascinating book available in our library collection.
       </p>
+      <!-- ====================new borrow -->
+             <p class="modal-borrow-info" id="modalBorrowInfo"></p>
 
       <div class="modal-buttons">
         <button class="favorite-btn" id="modalFavoriteBtn" type="button" data-id="">
           <i class="fa-regular fa-heart"></i> Add to Favorites
+        </button>
+        <!-- =====================new======== -->
+                 <button class="borrow-btn" id="modalBorrowBtn" type="button" data-id="">
+          <i class="fa-solid fa-book-open-reader"></i> Borrow Book
         </button>
 
         <button id="closeBookModalBtn" type="button">
@@ -562,5 +568,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 <script src="./scripttt.js"></script>
+<script src="./auth-ui.js"></script>
+
 </body>
 </html>
