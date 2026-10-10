@@ -31,6 +31,7 @@
   /* ---------- Current user ---------- */
 
   function getSessionUser() {
+    
     var session = readJSON(
       sessionStorage,
       SESSION_KEY,
@@ -51,7 +52,8 @@
 
     return {
       name: account.name || session.name || "Account",
-      email: account.email || session.email || ""
+      email: account.email || session.email || "",
+      avatar: account.avatar || "",
     };
   }
 
@@ -120,7 +122,30 @@
 
     var avatar = document.createElement("div");
     avatar.className = "booknest-account-avatar";
-    avatar.textContent = firstName.charAt(0).toUpperCase();
+        if (user.avatar) {
+      // The user has a profile picture, so show it
+      var photo = document.createElement("img");
+      photo.src = user.avatar;
+      photo.alt = firstName + " profile picture";
+      photo.style.width = "100%";
+      photo.style.height = "100%";
+      photo.style.objectFit = "cover";
+      photo.style.borderRadius = "50%";
+      photo.style.display = "block";
+
+      avatar.style.overflow = "hidden";
+      avatar.style.padding = "0";
+      avatar.appendChild(photo);
+
+      // If the picture is broken, go back to the letter
+      photo.onerror = function () {
+        photo.remove();
+        avatar.textContent = firstName.charAt(0).toUpperCase();
+      };
+    } else {
+      // No picture, so keep the original letter
+      avatar.textContent = firstName.charAt(0).toUpperCase();
+    }
 
     var name = document.createElement("strong");
     name.className = "booknest-account-name";

@@ -438,6 +438,60 @@ html {
   color: var(--parchment-50);
 }
 
+
+/* Hero text entrance animation */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate hero content */
+.hero-inner {
+  animation: heroFadeUp 1s ease-out both;
+}
+
+/* Animate eyebrow */
+.eyebrow {
+  animation: heroFadeUp 0.8s ease-out both;
+  animation-delay: 0.1s;
+}
+
+/* Animate title */
+.hero-title {
+  animation: heroFadeUp 1s ease-out both;
+  animation-delay: 0.2s;
+}
+
+/* Animate description */
+.hero-lede {
+  animation: heroFadeUp 1s ease-out both;
+  animation-delay: 0.4s;
+}
+
+/* Animate buttons */
+.hero-actions {
+  animation: heroFadeUp 1s ease-out both;
+  animation-delay: 0.6s;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-inner,
+  .eyebrow,
+  .hero-title,
+  .hero-lede,
+  .hero-actions {
+    animation: none;
+  }
+}
+
 /* stats========================================== */
 .stats-band {
     background: var(--ink-900);
@@ -1626,6 +1680,7 @@ background-repeat: no-repeat;
     gap:20px;
     padding:25px 60px;
     background:#f8f4ec;
+    
 }
 
 .search-box{
@@ -1674,7 +1729,7 @@ background-repeat: no-repeat;
 .catalog-hero {
   position: relative;
   width: 100%;
-  min-height: 280px;
+  min-height: 380px;
   display: flex;
   align-items: center;
   padding: 3rem 2rem;
@@ -1686,6 +1741,29 @@ background-repeat: no-repeat;
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
+/* Smooth background zoom animation */
+.catalog-hero {
+  animation: catalogZoom 10s ease-in-out infinite alternate;
+}
+
+@keyframes catalogZoom {
+  from {
+    background-size: 100% 100%;
+  }
+
+  to {
+    background-size: 110% 110%;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .catalog-hero {
+    animation: none;
+  }
+}
+
 
 /* Dark/Semi-transparent Overlay to ensure text readability */
 .catalog-hero::before {
@@ -2858,7 +2936,7 @@ body.dark-mode summary {
 
 /* Fix 4: Navigation and Links */
 body.dark-mode a:not(.btn) {
-    color: #72a8e8;
+    color: #415e7f;
 }
 
 body.dark-mode .nav-link {
@@ -2983,16 +3061,41 @@ body.dark-mode .hero-content p {
 .page-hero {
   position: relative;
   width: 100%;
-  min-height: 260px;
+  min-height: 380px; /* Increased height */
   display: flex;
   align-items: center;
-  padding: 3.5rem 2.5rem;
+  padding: 4rem 2.5rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   box-sizing: border-box;
 }
+
+/* Page hero background animation */
+.page-hero {
+  background-size: 100% 100%;
+  animation: pageHeroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes pageHeroZoom {
+  from {
+    background-size: 100% 100%;
+  }
+
+  to {
+    background-size: 110% 110%;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .page-hero {
+    animation: none;
+    background-size: cover;
+  }
+}
+
 
 /* Semi-Transparent Gradient Overlay for Readability */
 .page-hero::before {
@@ -3460,6 +3563,9 @@ body.dark .hero-title,
 body.dark .hero-lede {
   color: #ffffff !important;
 }
+body.dark-mode .hero-title span{
+    color: #d4a359 !important;
+}
 
 /* Preserve Browse Catalog Button */
 body.dark-mode .btn-primary,
@@ -3545,4 +3651,89 @@ body.dark .search-box input {
   color: #f8fafc !important;
   background: transparent !important;
 }
+
+
+/* Hero text entrance animation */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+
+  animation: heroFadeUp 1s ease-out both;
+}
+
+/* Animate the small category label */
+.page-hero .hero-tag {
+  animation: heroFadeUp 0.8s ease-out both;
+  animation-delay: 0.1s;
+}
+
+/* Animate the main heading */
+.page-hero h1 {
+  animation: heroFadeUp 1s ease-out both;
+  animation-delay: 0.2s;
+}
+
+/* Animate the description */
+.page-hero .hero-text {
+  animation: heroFadeUp 1s ease-out both;
+  animation-delay: 0.4s;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .page-hero .hero-content,
+  .page-hero .hero-tag,
+  .page-hero h1,
+  .page-hero .hero-text {
+    animation: none;
+  }
+}
+
+/* Catalog hero text entrance animation */
+.catalog-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+
+  animation: heroFadeUp 1s ease-out both;
+}
+
+.catalog-hero .hero-tag {
+  animation: heroFadeUp 0.8s ease-out both;
+  animation-delay: 0.1s;
+}
+
+.catalog-hero h1 {
+  animation: heroFadeUp 1s ease-out both;
+  animation-delay: 0.2s;
+}
+
+.catalog-hero .hero-text {
+  animation: heroFadeUp 1s ease-out both;
+  animation-delay: 0.4s;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .catalog-hero .hero-content,
+  .catalog-hero .hero-tag,
+  .catalog-hero h1,
+  .catalog-hero .hero-text {
+    animation: none;
+  }
+}
+
 

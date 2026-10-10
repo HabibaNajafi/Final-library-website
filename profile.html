@@ -1,59 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile | BookNest</title>
-
-    <link rel="stylesheet" href="./profile.css">
-
-    <!-- If you already use Font Awesome on your website,
-         keep the same Font Awesome link from your other pages. -->
-    <script src="profile.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - BookNest</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./profile.css">
 </head>
-
 <body>
-    <main class="profile-container">
-        <a href="home.html" class="back-link">← Back to Home</a>
 
-        <section class="profile-card">
-            <div class="profile-heading">
-                <div class="profile-avatar" id="profileAvatar">?</div>
+  <main class="container profile-main">
+    <a href="home.html" class="back-home-link">
+      <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
 
-                <div>
-                    <p class="eyebrow">BOOKNEST ACCOUNT</p>
-                    <h1>My Profile</h1>
-                    <p class="subtitle">Manage your personal information.</p>
-                </div>
-            </div>
+    <div class="profile-card">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <div class="avatar-upload-container">
+          <img id="avatarImage" class="profile-avatar" src="" alt="Profile Picture" style="display:none;">
+          <div id="avatarInitials" class="profile-avatar">H</div>
+          
+          <label for="avatarFileInput" class="avatar-edit-badge" title="Upload Profile Picture">
+            <i class="fa-solid fa-camera"></i>
+          </label>
+          <input type="file" id="avatarFileInput" accept="image/*">
+        </div>
 
-            <div id="profileMessage" class="profile-message" hidden></div>
+        <div class="profile-title-group">
+          <span class="profile-tag">BookNest Member</span>
+          <h1 id="profileDisplayName">User Profile</h1>
+          <span class="account-badge"><i class="fa-solid fa-circle-check"></i> Active Account</span>
+        </div>
+      </div>
 
-            <div id="profileDetails">
-                <div class="profile-field">
-                    <span>Full Name</span>
-                    <p id="profileName">Loading...</p>
-                </div>
+      <!-- Dashboard Quick Stats -->
+      <div class="stats-row">
+        <div class="stat-box">
+          <i class="fa-solid fa-book-bookmark"></i>
+          <div id="statBorrowed" class="stat-val">0</div>
+          <div class="stat-lbl">Books Borrowed</div>
+        </div>
+        <div class="stat-box">
+          <i class="fa-solid fa-heart"></i>
+          <div id="statFavorites" class="stat-val">0</div>
+          <div class="stat-lbl">Saved Favorites</div>
+        </div>
+        <div class="stat-box">
+          <i class="fa-solid fa-id-card"></i>
+          <div id="statMemberId" class="stat-val">#BN-8092</div>
+          <div class="stat-lbl">Member ID</div>
+        </div>
+      </div>
 
-                <div class="profile-field">
-                    <span>Email Address</span>
-                    <p id="profileEmail">Loading...</p>
-                </div>
+      <!-- Edit Profile Form -->
+      <form id="profileForm">
+        <h3 class="section-title"><i class="fa-solid fa-user-gear"></i> Personal Information</h3>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="inputName">Full Name</label>
+            <input type="text" id="inputName" required>
+          </div>
 
-                <div class="profile-field">
-                    <span>Account Status</span>
-                    <p><span class="status-badge">Logged In</span></p>
-                </div>
-            </div>
+          <div class="form-group">
+            <label for="inputEmail">Email Address (Read Only)</label>
+            <input type="email" id="inputEmail" readonly style="opacity: 0.75; cursor: not-allowed;">
+          </div>
 
-            <div class="profile-actions">
-                <a href="home.html" class="home-button">Return to Home</a>
-                <button type="button" id="profileLogout" class="logout-button">
-                    Logout
-                </button>
-            </div>
-        </section>
-    </main>
+          <div class="form-group">
+            <label for="inputPhone">Phone Number</label>
+            <input type="tel" id="inputPhone" placeholder="+1 (555) 000-0000">
+          </div>
+
+          <div class="form-group">
+            <label for="inputGenre">Favorite Genre</label>
+            <select id="inputGenre">
+              <option value="Fiction">Fiction</option>
+              <option value="Science Fiction">Science Fiction</option>
+              <option value="Mystery & Thriller">Mystery & Thriller</option>
+              <option value="History">History</option>
+              <option value="Biography">Biography</option>
+              <option value="Romance">Romance</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+  <button type="submit" class="btn-save">
+    <i class="fa-solid fa-floppy-disk"></i> Save Profile
+  </button>
+  <button type="button" id="deleteAccountBtn" class="btn-delete">
+    <i class="fa-solid fa-trash-can"></i> Delete Account
+  </button>
+</div>
+      </form>
+    </div>
+  </main>
+
+  <div id="toast"><span id="toastMsg"></span></div>
+
+  <script src="scripttt.js"></script>
+  <script src="profile.js"></script>
 </body>
 </html>

@@ -108,6 +108,10 @@
     <p class="selected-plan-line">
       Selected plan: <span id="selectedPlanText" class="selected-plan-value">None selected</span>
     </p>
+        <div id="membershipLoginNotice" hidden style="text-align:center; padding:24px 16px; margin-bottom:20px;">
+      <p style="margin-bottom:16px; font-size:1.1rem;">Please log in to apply for BookNest membership.</p>
+      <a id="membershipLoginBtn" class="submit-btn" href="login.html" style="display:inline-block; text-decoration:none;">Login</a>
+    </div>
 
     <form id="registrationForm" class="registration-form">
       <div class="form-row">
@@ -131,6 +135,12 @@
           <input type="date" id="dob" name="dob">
         </div>
       </div>
+      <div class="form-group">
+          <label for="dob">BookNest-Id-on-your-profile</label>
+          <input type="text" id="dob" name="dob">
+        </div>
+      
+
 
       <div class="form-group full-width">
         <label for="address">Mailing Address</label>
@@ -215,6 +225,61 @@
     <span>✓</span>
     <span id="toastMessage">Added to favorites</span>
 </div>
+<script>
+(function () {
+  "use strict";
+
+  // Same keys your login system already uses (we only READ them)
+  var SESSION_KEY = "booknest_current_user";
+  var USERS_KEY = "booknest_users";
+
+  var form = document.getElementById("registrationForm");
+  var notice = document.getElementById("membershipLoginNotice");
+  var loginBtn = document.getElementById("membershipLoginBtn");
+  if (!form || !notice) return;
+
+  // Same check as auth-ui.js: is there a valid logged-in user?
+  function isLoggedIn() {
+    try {
+      var session = JSON.parse(sessionStorage.getItem(SESSION_KEY));
+      if (!session || session.loggedIn !== true) return false;
+      var users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+      return users.some(function (u) { return u.email === session.email; });
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // Show or hide the message, and lock or unlock the form
+  function applyGate() {
+    var allowed = isLoggedIn();
+    notice.hidden = allowed;
+    form.style.opacity = allowed ? "" : "0.5";
+    form.style.pointerEvents = allowed ? "" : "none";
+    form.querySelectorAll("input, button, select, textarea").forEach(function (el) {
+      el.disabled = !allowed;
+    });
+  }
+
+  // Send the user to login, and bring them back here afterwards
+  if (loginBtn) loginBtn.href = "login.html?next=membership.html";
+
+  // Safety net: even if the form gets submitted, stop it when logged out.
+  // "true" = capture phase, so this runs BEFORE your existing submit code.
+  document.addEventListener("submit", function (event) {
+    if (event.target === form && !isLoggedIn()) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      applyGate();
+    }
+  }, true);
+
+  applyGate();
+
+  // Re-check when the user comes back with the Back button
+  window.addEventListener("pageshow", applyGate);
+})();
+</script>
 <script src="scripttt.js"></script>
 <script src="./auth-ui.js"></script>
 </body>
